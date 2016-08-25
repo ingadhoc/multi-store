@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <!-- Warehouse Form -->
+        <record id="view_warehouse" model="ir.ui.view">
+            <field name="name">stock.warehouse.form</field>
+            <field name="model">stock.warehouse</field>
+            <field name="inherit_id" ref="stock.view_warehouse"/>
+            <field name="arch" type="xml">
+                <field name="company_id" position="after">
+                    <field name="store_id" groups="base_multi_store.group_multi_store"/>
+                </field>                
+            </field>
+        </record>
+
+        <!-- New Warehouse Search -->
+        <record id="view_stock_warehouse_search" model="ir.ui.view">
+            <field name="name">stock.warehouse.search</field>
+            <field name="model">stock.warehouse</field>
+            <field name="arch" type="xml">
+                <search string="Search Stock_Warehouse">
+                    <field name="store_id" groups="base_multi_store.group_multi_store"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Picking Type Search -->
+        <record id="view_pickingtype_filter" model="ir.ui.view">
+            <field name="name">stock.picking.type.filter</field>
+            <field name="model">stock.picking.type</field>
+            <field name="inherit_id" ref="stock.view_pickingtype_filter"/>
+            <field name="arch" type="xml">
+                <field name="warehouse_id" position="after">
+                    <field name="store_id" groups="base_multi_store.group_multi_store"/>
+                </field>
+            </field>
+        </record>
+
+        <!-- Picking Internal (son las 3 iguales) Search -->
+        <record id="view_picking_internal_search" model="ir.ui.view">
+            <field name="name">stock.picking.internal.search</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+            <field name="arch" type="xml">
+                <field name="picking_type_id" position="after">
+                    <field name="store_id" groups="base_multi_store.group_multi_store"/>
+                </field>
+                <filter string="Picking Type" position="after">
+                    <filter string="Store" context="{'group_by':'store_id'}" groups="base_multi_store.group_multi_store"/>
+                </filter>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

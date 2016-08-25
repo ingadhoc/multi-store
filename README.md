@@ -7,21 +7,8 @@
 
 ADHOC Odoo Multi Store Related Addons
 TODO:
-Warehouse
-==>  (ver de agregar filtros por defecto a los del shop actual)
-Picking type
-stock moves
-Locations
-
 Talonarios ()
 
-
-Integrate stores in:
-* Account Journals
-==> (ver de agregar filtros por defecto a los del shop actual)
-* Account Invoices (Se ven todos)
-* Account Entries (Se ven todos)
-* Account Vouchers (Se ven todos)
 
 Integrate sale in:
 * 

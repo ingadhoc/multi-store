@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="1">
+
+    <record id="stock_warehouse_store_rule" model="ir.rule">
+        <field name="name">Warehouse multi-store</field>
+        <field name="model_id" ref="stock.model_stock_warehouse"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|',('store_id','=',False),('store_id','child_of',[user.store_id.id])]</field>
+    </record>
+
+    <record id="stock_picking_type_store_rule" model="ir.rule">
+        <field name="name">Stock Picking Type multi-store</field>
+        <field name="model_id" ref="stock.model_stock_picking_type"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|',('store_id','=',False),('store_id','child_of',[user.store_id.id])]</field>
+    </record>
+    
+    <record id="stock_picking_store_rule" model="ir.rule">
+        <field name="name">Stock Picking Type multi-store</field>
+        <field name="model_id" ref="stock.model_stock_picking"/>
+        <field name="global" eval="True"/>
+        <field name="perm_read" eval="False"/>
+        <field name="domain_force">['|',('store_id','=',False),('store_id','child_of',[user.store_id.id])]</field>
+    </record>
+
+    </data>
+</openerp>
+
