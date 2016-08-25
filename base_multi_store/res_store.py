@@ -28,7 +28,7 @@ class res_store(models.Model):
     )
     company_id = fields.Many2one(
         'res.company', 'Company',
-        required=True,
+        # required=True,
         help='If specified, this store will be only available on selected '
         'company',
         default=lambda self: self.env[

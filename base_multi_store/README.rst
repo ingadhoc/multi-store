@@ -32,7 +32,7 @@ Configuration
 
 To configure this module, you need to:
 
-#. Go to Configuration / Stores / Stores
+#. Go to Configuration / Companies / Stores
 #. Create and set up your stores
 
 Usage

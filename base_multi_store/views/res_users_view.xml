@@ -8,11 +8,11 @@
             <field name="inherit_id" ref="base.view_users_form"/>
             <field name="arch" type="xml">
                 <field name="company_id" position="after">
-                    <label for="store_id" class="oe_edit_only" groups="multi_store.group_multi_store"/>
-                    <field name="store_id" context="{'user_preference': 0}" groups="multi_store.group_multi_store"/>                    
+                    <label for="store_id" class="oe_edit_only" groups="base_multi_store.group_multi_store"/>
+                    <field name="store_id" context="{'user_preference': 0}" groups="base_multi_store.group_multi_store"/>                    
                 </field>
                 <group string="Allowed Companies" position="after">
-                    <group string="Allowed Stores" groups="multi_store.group_multi_store">
+                    <group string="Allowed Stores" groups="base_multi_store.group_multi_store">
                         <field name="store_ids" nolabel="1" widget="many2many_tags"/>
                     </group>
                 </group>
@@ -25,7 +25,7 @@
             <field name="inherit_id" ref="base.view_users_form_simple_modif"/>
             <field name="arch" type="xml">
                 <field name="company_id" position="after">
-                    <field name="store_id" readonly="0" contest="{'user_preference':0}" options="{'no_create': True}" groups="multi_store.group_multi_store"/>                
+                    <field name="store_id" readonly="0" contest="{'user_preference':0}" options="{'no_create': True}" groups="base_multi_store.group_multi_store"/>                
                 </field>
             </field>
         </record>
