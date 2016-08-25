@@ -10,6 +10,6 @@ class PurchaseOrder(models.Model):
     _inherit = 'purchase.order'
 
     store_id = fields.Many2one(
-        related='pickint_type_id.store_id',
+        related='picking_type_id.store_id',
         store=True,
     )
