@@ -31,7 +31,7 @@
 
         <!-- we add demo stores and store group to demo user -->
         <record id="base.user_demo" model="res.users">
-            <field name="store_id" ref="rosario_store"/>
+            <field name="store_id" ref="buenos_aires_store"/>
             <field name="store_ids" eval="[(4, ref('main_company_stores')),(4, ref('rosario_store')),(4, ref('buenos_aires_store')),(4, ref('shared_store'))]"/>
             <field name="groups_id" eval="[(4, ref('group_multi_store'))]"/>
         </record>

@@ -20,10 +20,21 @@
             <field name="model">res.store</field>
             <field name="arch" type="xml">
                 <form>
+                    <field name="id" invisible="1"/>
+                    <div class="oe_title oe_left">
+                        <div class="oe_edit_only">
+                            <label for="name"/>
+                        </div>
+                        <h1>
+                            <field name="name" default_focus="1" placeholder="Name"/>
+                        </h1>
+                        <field name="parent_id" placeholder="Parent" domain="[('id', '!=', id), ('company_id', '=', company_id)]" context="{'default_company_id': company_id}"/>
+                        <field name="company_id" placeholder="Company" groups="base.group_multi_company"/>
+                    </div>
+                    <div class="oe_right oe_button_box" name="buttons"> </div>
                     <group>
-                        <field name="name"/>
-                        <field name="parent_id"/>
-                        <field name="company_id" groups="base.group_multi_company"/>
+                        <notebook>
+                        </notebook>
                     </group>
                 </form>
             </field>

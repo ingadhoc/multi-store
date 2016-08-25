@@ -10,20 +10,21 @@ This module add a new concept "stores" in some point similar to multicompany. Si
 * User can be active only in one store (store_id) which can be set up in his own preferences
 * There is a group "multi store" that gives users the availability to see multi store fields
 
-It is intended to be used for security reazons (limit users to some journals for eg.) and for information (for eg. sales by shop)
+It is intended to be used for:
 
-On security, the generic idea is:
+* security reazons, for eg. limit users to some journals
+* information, for eg. sales by shop
 
-* Records can be seen by evryone, no matters the selected store
-* If on any record that has an store_id field:
-    * If store_id is set, users of that store or parent stores can create, unlink or modify the record
-    * If store_id is False, ALL users can create, unlink or modify the record
+Only a few models are directly linked (Direct Linked Models) to shops (for eg. journals and warehouses). The other models are linked by a related field (Related Linked Models) to those models (for eg. the invoice store comes from the journal store)
 
+Security rules for models (in generally):
 
-Installation
-============
+* Direct Linked Models:
+    * Records can only see if same store or not store set, this is done this way so they can not choose none autorhized records on M2O fields
 
-To install this module, you need to:
+* Related Linked Models:
+    * Records can be seen by everyone, no matters the store
+    * Create, unlink and write is only allow if same store or not store set
 
 #. Just install it
 

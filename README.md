@@ -6,6 +6,33 @@
 # ADHOC Multi Store
 
 ADHOC Odoo Multi Store Related Addons
+TODO:
+Warehouse
+==>  (ver de agregar filtros por defecto a los del shop actual)
+Picking type
+stock moves
+Locations
+
+Talonarios ()
+
+
+Integrate stores in:
+* Account Journals
+==> (ver de agregar filtros por defecto a los del shop actual)
+* Account Invoices (Se ven todos)
+* Account Entries (Se ven todos)
+* Account Vouchers (Se ven todos)
+
+Integrate sale in:
+* 
+Integrate purchase in:
+* 
+Integrate sale order type in:
+
+Filtrar en preferencias de usuario por store de cia elegida
+
+Cambiar valores por defecto al crear cada cosa, debría filtrar solos por los del usuario
+
 
 [//]: # (addons)
 This part will be replaced when running the oca-gen-addons-table script from OCA/maintainer-tools.
