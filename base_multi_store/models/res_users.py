@@ -28,11 +28,10 @@ class res_users(models.Model):
         default, but allowed on some specific fields defined in
         self.SELF_{READ/WRITE}ABLE_FIELDS.
         """
-        init_res = super(res_users, self).__init__(pool, cr)
+        super(res_users, self).__init__(pool, cr)
         # duplicate list to avoid modifying the original reference
         self.SELF_WRITEABLE_FIELDS = list(self.SELF_WRITEABLE_FIELDS)
         self.SELF_WRITEABLE_FIELDS.append('store_id')
         # duplicate list to avoid modifying the original reference
         self.SELF_READABLE_FIELDS = list(self.SELF_READABLE_FIELDS)
         self.SELF_READABLE_FIELDS.append('store_id')
-        return init_res
