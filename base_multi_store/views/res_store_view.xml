@@ -49,7 +49,7 @@
             <field name="domain"></field>
         </record>
 
-        <menuitem action="action_store" id="menu_action_res_store" parent="base.menu_res_company_global" sequence="20"/>
+        <menuitem action="action_store" id="menu_action_res_store" parent="base.menu_users" sequence="20"/>
 
     </data>
 </openerp>

@@ -45,8 +45,8 @@ class AccountMoveLine(models.Model):
     )
 
 
-class AccountVoucher(models.Model):
-    _inherit = 'account.voucher'
+class AccountPayment(models.Model):
+    _inherit = 'account.payment'
 
     store_id = fields.Many2one(
         related='journal_id.store_id',

@@ -7,15 +7,12 @@
             <field name="model">res.users</field>
             <field name="inherit_id" ref="base.view_users_form"/>
             <field name="arch" type="xml">
-                <field name="company_id" position="after">
-                    <label for="store_id" class="oe_edit_only" groups="base_multi_store.group_multi_store"/>
-                    <field name="store_id" context="{'user_preference': 0}" groups="base_multi_store.group_multi_store"/>                    
-                </field>
-                <group string="Allowed Companies" position="after">
+                <xpath expr="//page[@name='access_rights']/group" position="after">
                     <group string="Allowed Stores" groups="base_multi_store.group_multi_store">
-                        <field name="store_ids" nolabel="1" widget="many2many_tags"/>
+                        <field string="Allowed Stores" name="store_ids" widget="many2many_tags"/>
+                        <field string="Current Store" name="store_id" context="{'user_preference': 0}"/>
                     </group>
-                </group>
+                </xpath>
             </field>
         </record>
 

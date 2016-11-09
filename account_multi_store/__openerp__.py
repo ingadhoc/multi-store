@@ -30,7 +30,7 @@
     'images': [
     ],
     'depends': [
-        'account_voucher',
+        'account',
         'base_multi_store',
     ],
     'data': [
@@ -39,7 +39,8 @@
         'security/multi_store_security.xml',
     ],
     'demo': [
-        'demo/account_demo.xml',
+        # TODO fix demo data, perhups yml
+        # 'demo/account_demo.xml',
     ],
     'test': [
     ],

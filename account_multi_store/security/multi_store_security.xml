@@ -25,9 +25,9 @@
         <field name="domain_force">['|',('store_id','=',False),('store_id','child_of',[user.store_id.id])]</field>
     </record>
 
-    <record id="account_voucher_store_rule" model="ir.rule">
-        <field name="name">Voucher multi-store</field>
-        <field name="model_id" ref="account_voucher.model_account_voucher"/>
+    <record id="account_payment_store_rule" model="ir.rule">
+        <field name="name">Pyment multi-store</field>
+        <field name="model_id" ref="account.model_account_payment"/>
         <field name="global" eval="True"/>
         <field name="perm_read" eval="False"/>        
         <field name="domain_force">['|',('store_id','=',False),('store_id','child_of',[user.store_id.id])]</field>

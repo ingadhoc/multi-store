@@ -14,7 +14,6 @@
             <field name="store_id" ref="base_multi_store.buenos_aires_store"/>
             <field name="code">TSAJB</field>
             <field name="type">sale</field>
-            <!-- <field name="sequence_id" ref="sequence_sale_journal"/> -->
             <field name="default_credit_account_id" ref="account.a_sale"/>
             <field name="default_debit_account_id" ref="account.a_sale"/>
             <field name="analytic_journal_id" ref="account.cose_journal_sale"/>
