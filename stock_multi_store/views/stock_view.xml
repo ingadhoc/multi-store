@@ -46,9 +46,9 @@
                 <field name="picking_type_id" position="after">
                     <field name="store_id" groups="base_multi_store.group_multi_store"/>
                 </field>
-                <filter string="Picking Type" position="after">
+                <group>
                     <filter string="Store" context="{'group_by':'store_id'}" groups="base_multi_store.group_multi_store"/>
-                </filter>
+                </group>
             </field>
         </record>
         

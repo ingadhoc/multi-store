@@ -34,7 +34,7 @@
         'base_multi_store',
     ],
     'data': [
-        'views/sale_view.xml',
+        # 'views/sale_view.xml',
         'security/multi_store_security.xml',
     ],
     'demo': [
