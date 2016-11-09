@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name': 'Multi Store for Sale',
-    'version': '8.0.1.0.0',
+    'version': '9.0.1.0.0',
     'category': 'Accounting',
     'sequence': 14,
     'summary': '',
