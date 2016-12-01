@@ -16,7 +16,7 @@ class res_store(models.Model):
     )
     warehouses_count = fields.Integer(
         compute='_compute_warehouses_count',
-        string='Journals',
+        string='Warehouses',
     )
 
     @api.one
