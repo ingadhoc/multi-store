@@ -24,6 +24,7 @@ class AccountInvoice(models.Model):
     store_id = fields.Many2one(
         related='journal_id.store_id',
         store=True,
+        readonly=True,
     )
 
 
@@ -33,6 +34,7 @@ class AccountMove(models.Model):
     store_id = fields.Many2one(
         related='journal_id.store_id',
         store=True,
+        readonly=True,
     )
 
 
@@ -42,6 +44,7 @@ class AccountMoveLine(models.Model):
     store_id = fields.Many2one(
         related='move_id.store_id',
         store=True,
+        readonly=True,
     )
 
 
@@ -51,4 +54,5 @@ class AccountPayment(models.Model):
     store_id = fields.Many2one(
         related='journal_id.store_id',
         store=True,
+        readonly=True,
     )

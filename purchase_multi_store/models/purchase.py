@@ -12,4 +12,5 @@ class PurchaseOrder(models.Model):
     store_id = fields.Many2one(
         related='picking_type_id.store_id',
         store=True,
+        readonly=True,
     )
