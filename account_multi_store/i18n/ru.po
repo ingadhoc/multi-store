@@ -1,0 +1,84 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * account_multi_store
+# 
+# Translators:
+# Nikolai Buzovskiy <nicholas.buzovsky@gmail.com>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-20 20:04+0000\n"
+"PO-Revision-Date: 2017-02-20 20:04+0000\n"
+"Last-Translator: Nikolai Buzovskiy <nicholas.buzovsky@gmail.com>, 2017\n"
+"Language-Team: Russian (https://www.transifex.com/adhoc/teams/46451/ru/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: ru\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#. module: account_multi_store
+#: model:ir.model,name:account_multi_store.model_account_move
+msgid "Account Entry"
+msgstr "Учетная Запись"
+
+#. module: account_multi_store
+#: model:ir.model,name:account_multi_store.model_account_invoice
+msgid "Invoice"
+msgstr "Счет-фактура"
+
+#. module: account_multi_store
+#: model:ir.model,name:account_multi_store.model_account_journal
+msgid "Journal"
+msgstr "Журнал"
+
+#. module: account_multi_store
+#: model:ir.model,name:account_multi_store.model_account_move_line
+msgid "Journal Item"
+msgstr "Элемент журнала"
+
+#. module: account_multi_store
+#: model:ir.model.fields,field_description:account_multi_store.field_res_store_journal_ids
+#: model:ir.model.fields,field_description:account_multi_store.field_res_store_journals_count
+#: model:ir.ui.view,arch_db:account_multi_store.view_res_store_form
+msgid "Journals"
+msgstr "Журналы"
+
+#. module: account_multi_store
+#: model:ir.model,name:account_multi_store.model_account_payment
+msgid "Payments"
+msgstr "Платежи"
+
+#. module: account_multi_store
+#: model:ir.model.fields,field_description:account_multi_store.field_account_invoice_store_id
+#: model:ir.model.fields,field_description:account_multi_store.field_account_journal_store_id
+#: model:ir.model.fields,field_description:account_multi_store.field_account_move_line_store_id
+#: model:ir.model.fields,field_description:account_multi_store.field_account_move_store_id
+#: model:ir.model.fields,field_description:account_multi_store.field_account_payment_store_id
+#: model:ir.ui.view,arch_db:account_multi_store.view_account_invoice_filter
+#: model:ir.ui.view,arch_db:account_multi_store.view_account_journal_search
+#: model:ir.ui.view,arch_db:account_multi_store.view_account_move_filter
+#: model:ir.ui.view,arch_db:account_multi_store.view_account_move_line_filter
+#: model:ir.ui.view,arch_db:account_multi_store.view_account_payment_search
+msgid "Store"
+msgstr "Магазин"
+
+#. module: account_multi_store
+#: model:ir.model.fields,help:account_multi_store.field_account_invoice_store_id
+#: model:ir.model.fields,help:account_multi_store.field_account_journal_store_id
+#: model:ir.model.fields,help:account_multi_store.field_account_move_line_store_id
+#: model:ir.model.fields,help:account_multi_store.field_account_move_store_id
+#: model:ir.model.fields,help:account_multi_store.field_account_payment_store_id
+msgid ""
+"Store used for data analysys and also users that are not of this store, can "
+"only see this journal records but can not post or modify  any entry on them."
+msgstr ""
+"Магазин используется для анализа данных, а также пользователей, которые не "
+"из этого магазина, видят только эти журналы записей, но не могут размещать "
+"или изменять какие-либо записи"
+
+#. module: account_multi_store
+#: model:ir.model,name:account_multi_store.model_res_store
+msgid "Stores"
+msgstr "Магазины"

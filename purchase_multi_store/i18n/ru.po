@@ -1,0 +1,38 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * purchase_multi_store
+# 
+# Translators:
+# Nikolai Buzovskiy <nicholas.buzovsky@gmail.com>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-20 20:04+0000\n"
+"PO-Revision-Date: 2017-02-20 20:04+0000\n"
+"Last-Translator: Nikolai Buzovskiy <nicholas.buzovsky@gmail.com>, 2017\n"
+"Language-Team: Russian (https://www.transifex.com/adhoc/teams/46451/ru/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: ru\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#. module: purchase_multi_store
+#: model:ir.model,name:purchase_multi_store.model_purchase_order
+msgid "Purchase Order"
+msgstr ""
+
+#. module: purchase_multi_store
+#: model:ir.model.fields,field_description:purchase_multi_store.field_purchase_order_store_id
+#: model:ir.ui.view,arch_db:purchase_multi_store.view_purchase_order_filter
+msgid "Store"
+msgstr "Магазин"
+
+#. module: purchase_multi_store
+#: model:ir.model.fields,help:purchase_multi_store.field_purchase_order_store_id
+msgid ""
+"Store used for data analysys and also users that are not of this store, can "
+"only see this warehouse records but can not post or modify any record "
+"related to them."
+msgstr ""
