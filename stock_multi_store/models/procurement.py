@@ -3,6 +3,12 @@
 # For copyright and license notices, see __openerp__.py file in module root
 # directory
 ##############################################################################
-from . import stock
-from . import res_store
-from . import procurement
+from openerp import models, api
+
+
+class ProcurementOrder(models.Model):
+    _inherit = "procurement.order"
+
+    @api.multi
+    def run(self, autocommit=False):
+        return super(ProcurementOrder, self.sudo()).run(autocommit=autocommit)
