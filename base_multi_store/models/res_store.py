@@ -3,8 +3,8 @@
 # For copyright and license notices, see __manifest__.py file in module root
 # directory
 ##############################################################################
-from openerp import models, fields, SUPERUSER_ID
-from openerp.osv import osv
+from odoo import models, fields, SUPERUSER_ID
+from odoo.osv import osv
 
 
 class res_store(models.Model):
