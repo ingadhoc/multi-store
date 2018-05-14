@@ -18,7 +18,7 @@ class res_store(models.Model):
     parent_id = fields.Many2one(
         'res.store',
         'Parent Store',
-        select=True
+        index=True,
     )
     child_ids = fields.One2many(
         'res.store',
