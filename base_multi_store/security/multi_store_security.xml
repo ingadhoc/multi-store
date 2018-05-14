@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<openerp>
+<odoo>
     <data noupdate="1">
 
     <record model="res.groups" id="group_multi_store">
@@ -15,5 +15,5 @@
     </record>
 
     </data>
-</openerp>
+</odoo>
 

@@ -1,10 +1,9 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
-# For copyright and license notices, see __openerp__.py file in module root
+# For copyright and license notices, see __manifest__.py file in module root
 # directory
 ##############################################################################
-from openerp import models, fields, SUPERUSER_ID
-from openerp.osv import osv
+from odoo import models, fields, SUPERUSER_ID
+from odoo.osv import osv
 
 
 class res_store(models.Model):
@@ -19,7 +18,7 @@ class res_store(models.Model):
     parent_id = fields.Many2one(
         'res.store',
         'Parent Store',
-        select=True
+        index=True,
     )
     child_ids = fields.One2many(
         'res.store',
