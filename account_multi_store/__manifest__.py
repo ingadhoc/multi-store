@@ -19,7 +19,7 @@
 ##############################################################################
 {
     'name': 'Multi Store for Warehouse',
-    'version': '9.0.1.0.0',
+    'version': '11.0.1.0.0',
     'category': 'Accounting',
     'sequence': 14,
     'summary': '',
@@ -33,17 +33,19 @@
         'base_multi_store',
     ],
     'data': [
-        'views/res_store_view.xml',
-        'views/account_view.xml',
+        'views/account_invoice_views.xml',
+        'views/account_journal_views.xml',
+        'views/account_move_line_views.xml',
+        'views/account_move_views.xml',
+        'views/account_payment_views.xml',
+        'views/res_store_views.xml',
         'security/multi_store_security.xml',
     ],
     'demo': [
         # TODO fix demo data, perhups yml
         # 'demo/account_demo.xml',
     ],
-    'test': [
-    ],
-    'installable': False,
+    'installable': True,
     'auto_install': True,
     'application': False,
 }

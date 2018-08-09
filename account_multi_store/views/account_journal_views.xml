@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<odoo>
+    <!-- Journal Form -->
+    <record id="view_account_journal_form" model="ir.ui.view">
+        <field name="name">account.journal.form</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_form"/>
+        <field name="arch" type="xml">
+            <field name="company_id" position="after">
+                <field name="store_id" groups="base_multi_store.group_multi_store"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- Journal Search -->
+    <record id="view_account_journal_search" model="ir.ui.view">
+        <field name="name">account.journal.search</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_search"/>
+        <field name="arch" type="xml">
+            <search>
+                <field name="store_id" groups="base_multi_store.group_multi_store"/>
+                <filter string="Store" context="{'group_by':'store_id'}" groups="base_multi_store.group_multi_store"/>
+            </search>
+        </field>
+    </record>
+</odoo>

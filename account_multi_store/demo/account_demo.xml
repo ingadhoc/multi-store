@@ -1,32 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo>
-    <data noupdate="1">
+<?xml version="1.0"?>
+<odoo noupdate="1">
+    <!-- sales journal for rosario -->
+    <record id="account.sales_journal" model="account.journal">
+        <field name="store_id" ref="base_multi_store.rosario_store"/>
+        <field name="name">Sales Journal - (Rosario)</field>
+    </record>
 
-        <!-- sales journal for rosario -->
-        <record id="account.sales_journal" model="account.journal">
-            <field name="store_id" ref="base_multi_store.rosario_store"/>
-            <field name="name">Sales Journal - (Rosario)</field>
-        </record>
+    <!-- sales journal for buenos aires -->
+    <record id="sales_journal_buenos_aires" model="account.journal">
+        <field name="name">Sales Journal - (Buenos Aires)</field>
+        <field name="store_id" ref="base_multi_store.buenos_aires_store"/>
+        <field name="code">TSAJB</field>
+        <field name="type">sale</field>
+        <field name="default_credit_account_id" ref="account.a_sale"/>
+        <field name="default_debit_account_id" ref="account.a_sale"/>
+        <field name="analytic_journal_id" ref="account.cose_journal_sale"/>
+        <field name="user_id" ref="base.user_root"/>
+    </record>
 
-        <!-- sales journal for buenos aires -->
-        <record id="sales_journal_buenos_aires" model="account.journal">
-            <field name="name">Sales Journal - (Buenos Aires)</field>
-            <field name="store_id" ref="base_multi_store.buenos_aires_store"/>
-            <field name="code">TSAJB</field>
-            <field name="type">sale</field>
-            <field name="default_credit_account_id" ref="account.a_sale"/>
-            <field name="default_debit_account_id" ref="account.a_sale"/>
-            <field name="analytic_journal_id" ref="account.cose_journal_sale"/>
-            <field name="user_id" ref="base.user_root"/>
-        </record>
+    <record id="account.bank_journal" model="account.journal">
+        <field name="store_id" ref="base_multi_store.rosario_store"/>
+    </record>
 
-        <record id="account.bank_journal" model="account.journal">
-            <field name="store_id" ref="base_multi_store.rosario_store"/>
-        </record>
-
-        <record id="account.cash_journal" model="account.journal">
-            <field name="store_id" ref="base_multi_store.rosario_store"/>
-        </record>
-
-    </data>
+    <record id="account.cash_journal" model="account.journal">
+        <field name="store_id" ref="base_multi_store.rosario_store"/>
+    </record>
 </odoo>
