@@ -1,7 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
-    <data noupdate="1">
-
+<odoo noupdate="1">
     <record model="res.groups" id="group_multi_store">
         <field name="name">Multi Stores</field>
         <field name="category_id" ref="base.module_category_usability"/>
@@ -13,7 +11,5 @@
         <field name="model_id" ref="model_res_store"/>
         <field name="domain_force">[('id','child_of',[user.store_id.id])]</field>
     </record>
-
-    </data>
 </odoo>
 

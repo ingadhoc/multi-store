@@ -1,57 +1,59 @@
 <?xml version="1.0"?>
 <odoo>
-    <data>
-        <!-- Tree -->
-        <record id="view_res_store_tree" model="ir.ui.view">
-            <field name="name">res.store.tree</field>
-            <field name="model">res.store</field>
-            <field name="arch" type="xml">
-                <tree string="Stores">
-                    <field name="name"/>
-                    <field name="parent_id"/>
-                    <field name="company_id" groups="base.group_multi_company"/>
-                </tree>
-            </field>
-        </record>
+    <!-- Tree -->
+    <record id="view_res_store_tree" model="ir.ui.view">
+        <field name="name">res.store.tree</field>
+        <field name="model">res.store</field>
+        <field name="arch" type="xml">
+            <tree string="Stores">
+                <field name="name"/>
+                <field name="parent_id"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </tree>
+        </field>
+    </record>
 
-        <!-- Form -->
-        <record id="view_res_store_form" model="ir.ui.view">
-            <field name="name">res.store.form</field>
-            <field name="model">res.store</field>
-            <field name="arch" type="xml">
-                <form>
-                    <sheet>
-                        <div class="oe_button_box" name="buttons"> </div>
-                        <group>
-                        <field name="id" invisible="1"/>
-                        <div class="oe_title oe_left">
-                            <div class="oe_edit_only">
-                                <label for="name"/>
-                            </div>
-                            <h1>
-                                <field name="name" default_focus="1" placeholder="Name"/>
-                            </h1>
-                            <field name="parent_id" placeholder="Parent" domain="[('id', '!=', id), ('company_id', '=', company_id)]" context="{'default_company_id': company_id}"/>
-                            <field name="company_id" placeholder="Company" groups="base.group_multi_company"/>
+    <!-- Form -->
+    <record id="view_res_store_form" model="ir.ui.view">
+        <field name="name">res.store.form</field>
+        <field name="model">res.store</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_button_box" name="buttons"> </div>
+                    <group>
+                    <field name="id" invisible="1"/>
+                    <div class="oe_title oe_left">
+                        <div class="oe_edit_only">
+                            <label for="name"/>
                         </div>
-                            <notebook>
-                            </notebook>
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
+                        <h1>
+                            <field name="name" default_focus="1" placeholder="Name"/>
+                        </h1>
+                        <field name="parent_id" placeholder="Parent" domain="[('id', '!=', id), ('company_id', '=', company_id)]" context="{'default_company_id': company_id}"/>
+                        <field name="company_id" placeholder="Company" groups="base.group_multi_company"/>
+                    </div>
+                        <notebook>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
-        <record id="action_store" model="ir.actions.act_window">
-            <field name="name">Stores</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">res.store</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-            <field name="domain"></field>
-        </record>
+    <record id="action_store" model="ir.actions.act_window">
+        <field name="name">Stores</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.store</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain"></field>
+    </record>
 
-        <menuitem action="action_store" id="menu_action_res_store" parent="base.menu_users" sequence="20"/>
-
-    </data>
+    <menuitem
+        action="action_store"
+        id="menu_action_res_store"
+        parent="base.menu_users"
+        sequence="20"
+    />
 </odoo>
