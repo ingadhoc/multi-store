@@ -19,7 +19,7 @@
 ##############################################################################
 {
     'name': 'Multi Store for Warehouse',
-    'version': '9.0.1.0.0',
+    'version': '11.0.1.0.0',
     'category': 'Accounting',
     'sequence': 14,
     'summary': '',
@@ -33,8 +33,10 @@
         'base_multi_store',
     ],
     'data': [
+        'views/stock_picking_type_view.xml',
+        'views/stock_picking_view.xml',
+        'views/stock_warehouse_view.xml',
         'views/res_store_view.xml',
-        'views/stock_view.xml',
         'security/multi_store_security.xml',
     ],
     'demo': [
@@ -42,7 +44,7 @@
     ],
     'test': [
     ],
-    'installable': False,
-    'auto_install': True,
+    'installable': True,
+    'auto_install': False,
     'application': False,
 }
