@@ -5,7 +5,7 @@
 from odoo import models, fields, api
 
 
-class res_store(models.Model):
+class ResStore(models.Model):
     _inherit = "res.store"
 
     warehouse_ids = fields.One2many(
@@ -18,7 +18,7 @@ class res_store(models.Model):
         string='Warehouses',
     )
 
-    @api.one
     @api.depends('warehouse_ids')
     def _compute_warehouses_count(self):
-        self.warehouses_count = len(self.warehouse_ids)
+        for rec in self:
+            rec.warehouses_count = len(rec.warehouse_ids)

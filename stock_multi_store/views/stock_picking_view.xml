@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<odoo>
+    <!-- Picking Internal (son las 3 iguales) Search -->
+    <record id="view_picking_internal_search" model="ir.ui.view">
+        <field name="name">stock.picking.internal.search</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+        <field name="arch" type="xml">
+            <field name="picking_type_id" position="after">
+                <field name="store_id" groups="base_multi_store.group_multi_store"/>
+            </field>
+            <group>
+                <filter string="Store" context="{'group_by':'store_id'}" groups="base_multi_store.group_multi_store"/>
+            </group>
+        </field>
+    </record>
+</odoo>
