@@ -5,20 +5,21 @@
 from odoo import models, fields, api
 
 
-class res_store(models.Model):
+class ResStore(models.Model):
     _inherit = "res.store"
 
     journal_ids = fields.One2many(
         'account.journal',
         'store_id',
-        'Journals'
+        'Journals',
     )
+
     journals_count = fields.Integer(
         compute='_compute_journals_count',
         string='Journals',
     )
 
-    @api.one
     @api.depends('journal_ids')
     def _compute_journals_count(self):
-        self.journals_count = len(self.journal_ids)
+        for rec in self:
+            rec.journals_count = len(rec.journal_ids)
