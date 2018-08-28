@@ -19,7 +19,7 @@
 ##############################################################################
 {
     'name': 'Multi Store for Sale',
-    'version': '9.0.1.0.0',
+    'version': '11.0.1.0.0',
     'category': 'Accounting',
     'sequence': 14,
     'summary': '',
@@ -33,14 +33,12 @@
         'base_multi_store',
     ],
     'data': [
-        # 'views/sale_view.xml',
+        'views/sale_order_view.xml',
         'security/multi_store_security.xml',
     ],
     'demo': [
     ],
-    'test': [
-    ],
-    'installable': False,
+    'installable': True,
     'auto_install': True,
     'application': False,
 }
