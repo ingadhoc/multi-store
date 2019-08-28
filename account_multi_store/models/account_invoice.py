@@ -11,5 +11,4 @@ class AccountInvoice(models.Model):
     store_id = fields.Many2one(
         related='journal_id.store_id',
         store=True,
-        readonly=True,
     )

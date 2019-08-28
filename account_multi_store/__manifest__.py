@@ -18,7 +18,7 @@
 #
 ##############################################################################
 {
-    'name': 'Multi Store for Warehouse',
+    'name': 'Multi Store for Accounting',
     'version': '12.0.1.0.0',
     'category': 'Accounting',
     'sequence': 14,
@@ -45,7 +45,7 @@
         # TODO fix demo data, perhups yml
         # 'demo/account_demo.xml',
     ],
-    'installable': False,
+    'installable': True,
     'auto_install': True,
     'application': False,
 }

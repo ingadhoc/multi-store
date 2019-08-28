@@ -11,5 +11,4 @@ class AccountMoveLine(models.Model):
     store_id = fields.Many2one(
         related='move_id.store_id',
         store=True,
-        readonly=True,
     )

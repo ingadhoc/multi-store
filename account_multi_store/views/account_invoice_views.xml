@@ -6,11 +6,11 @@
         <field name="model">account.invoice</field>
         <field name="inherit_id" ref="account.view_account_invoice_filter"/>
         <field name="arch" type="xml">
-            <field name="journal_id" position="after">
+            <field name="number" position="before">
                 <field name="store_id" groups="base_multi_store.group_multi_store"/>
             </field>
             <group position="inside">
-                <filter string="Store" context="{'group_by':'store_id'}" groups="base_multi_store.group_multi_store"/>
+                <filter name="store" string="Store" context="{'group_by':'store_id'}" groups="base_multi_store.group_multi_store"/>
             </group>
         </field>
     </record>
