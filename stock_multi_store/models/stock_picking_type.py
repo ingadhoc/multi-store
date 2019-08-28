@@ -11,5 +11,4 @@ class StockPickingType(models.Model):
     store_id = fields.Many2one(
         related='warehouse_id.store_id',
         store=True,
-        readonly=True,
     )
