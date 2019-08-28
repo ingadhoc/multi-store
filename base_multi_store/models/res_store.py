@@ -29,7 +29,6 @@ class ResStore(models.Model):
 
     company_id = fields.Many2one(
         'res.company', 'Company',
-        # required=True,
         help='If specified, this store will be only available on selected '
         'company',
     )
@@ -67,5 +66,5 @@ class ResStore(models.Model):
             store_ids = list(set(
                 [user.store_id.id] + [cmp.id for cmp in user.store_ids]))
             args = (args or []) + [('id', 'in', store_ids)]
-        return super(ResStore, self).name_search(
+        return super().name_search(
             name=name, args=args, operator=operator, limit=limit)
