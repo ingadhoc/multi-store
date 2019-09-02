@@ -15,7 +15,7 @@ class ResStore(models.Model):
     )
     warehouses_count = fields.Integer(
         compute='_compute_warehouses_count',
-        string='Warehouses',
+        string='Warehouses Count',
     )
 
     @api.depends('warehouse_ids')
