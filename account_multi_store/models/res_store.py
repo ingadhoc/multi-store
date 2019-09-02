@@ -16,7 +16,7 @@ class ResStore(models.Model):
 
     journals_count = fields.Integer(
         compute='_compute_journals_count',
-        string='Journals',
+        string='Journals Count',
     )
 
     @api.depends('journal_ids')

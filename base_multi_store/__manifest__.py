@@ -32,17 +32,17 @@
         'base',
     ],
     'data': [
+        'security/ir.model.access.csv',
+        'security/multi_store_security.xml',
         'views/res_store_view.xml',
         'views/res_users_view.xml',
-        'security/multi_store_security.xml',
-        'security/ir.model.access.csv',
     ],
     'demo': [
         'demo/res_store_demo.xml',
     ],
     'test': [
     ],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
     'application': True,
 }

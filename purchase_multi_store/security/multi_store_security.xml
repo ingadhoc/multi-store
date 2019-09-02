@@ -8,4 +8,3 @@
         <field name="domain_force">['|',('store_id','=',False),('store_id','child_of',[user.store_id.id])]</field>
     </record>
 </odoo>
-

@@ -24,7 +24,7 @@
         </record>
 
         <!-- we add demo stores to admin user -->
-        <record id="base.user_root" model="res.users">
+        <record id="base.user_admin" model="res.users">
             <field name="store_id" ref="main_company_stores"/>
             <field name="store_ids" eval="[(4, ref('main_company_stores')),(4, ref('rosario_store')),(4, ref('buenos_aires_store')),(4, ref('shared_store'))]"/>
         </record>

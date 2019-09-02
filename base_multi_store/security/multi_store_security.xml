@@ -3,7 +3,7 @@
     <record model="res.groups" id="group_multi_store">
         <field name="name">Multi Stores</field>
         <field name="category_id" ref="base.module_category_usability"/>
-        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        <field name="users" eval="[(4, ref('base.user_admin'))]"/>
     </record>
 
     <record id="res_store_rule" model="ir.rule">
