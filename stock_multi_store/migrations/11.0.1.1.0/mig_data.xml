@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="stock_picking_type_store_rule" model="ir.rule">
+        <field name="domain_force">['|',('warehouse_id.store_id','=',False),('warehouse_id.store_id','child_of',[user.store_id.id])]</field>
+    </record>
+
+    <record id="stock_picking_store_rule" model="ir.rule">
+        <field name="domain_force">['|',('picking_type_id.warehouse_id.store_id','=',False),('picking_type_id.warehouse_id.store_id','child_of',[user.store_id.id])]</field>
+    </record>
+
+</odoo>

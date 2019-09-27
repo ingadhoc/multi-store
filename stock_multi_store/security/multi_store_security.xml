@@ -14,7 +14,7 @@
         <field name="name">Stock Picking Type multi-store</field>
         <field name="model_id" ref="stock.model_stock_picking_type"/>
         <field name="global" eval="True"/>
-        <field name="domain_force">['|',('store_id','=',False),('store_id','child_of',[user.store_id.id])]</field>
+        <field name="domain_force">['|',('warehouse_id.store_id','=',False),('warehouse_id.store_id','child_of',[user.store_id.id])]</field>
     </record>
 
     <record id="stock_picking_store_rule" model="ir.rule">
@@ -22,7 +22,7 @@
         <field name="model_id" ref="stock.model_stock_picking"/>
         <field name="global" eval="True"/>
         <field name="perm_read" eval="False"/>
-        <field name="domain_force">['|',('store_id','=',False),('store_id','child_of',[user.store_id.id])]</field>
+        <field name="domain_force">['|',('picking_type_id.warehouse_id.store_id','=',False),('picking_type_id.warehouse_id.store_id','child_of',[user.store_id.id])]</field>
     </record>
 
 </odoo>
