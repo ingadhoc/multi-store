@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="purchase_order_store_rule" model="ir.rule">
+        <field name="domain_force">['|',('picking_type_id.store_id','=',False),('picking_type_id.store_id','child_of',[user.store_id.id])]</field>
+    </record>
+
+</odoo>

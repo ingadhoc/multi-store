@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="account_move_store_rule" model="ir.rule">
+        <field name="domain_force">['|',('journal_id.store_id','=',False),('journal_id.store_id','child_of',[user.store_id.id])]</field>
+    </record>
+
+    <record id="account_invoice_store_rule" model="ir.rule">
+        <field name="domain_force">['|',('journal_id.store_id','=',False),('journal_id.store_id','child_of',[user.store_id.id])]</field>
+    </record>
+
+    <record id="account_payment_store_rule" model="ir.rule">
+        <field name="domain_force">['|',('journal_id.store_id','=',False),('journal_id.store_id','child_of',[user.store_id.id])]</field>
+    </record>
+
+</odoo>
