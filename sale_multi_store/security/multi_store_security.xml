@@ -6,7 +6,7 @@
         <field name="model_id" ref="sale.model_sale_order"/>
         <field name="global" eval="True"/>
         <field name="perm_read" eval="False"/>
-        <field name="domain_force">['|',('store_id','=',False),('store_id','child_of',[user.store_id.id])]</field>
+        <field name="domain_force">['|',('warehouse_id.store_id','=',False),('warehouse_id.store_id','child_of',[user.store_id.id])]</field>
     </record>
 
 </odoo>
