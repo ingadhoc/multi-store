@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="res_store_rule" model="ir.rule">
+        <field name="groups" eval="[(4,ref('base.group_user')),(4,ref('base.group_portal')), (4,ref('base.group_public'))]"/>
+    </record>
+
+</odoo>
