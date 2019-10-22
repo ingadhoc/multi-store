@@ -2,7 +2,7 @@
 # For copyright and license notices, see __manifest__.py file in module root
 # directory
 ##############################################################################
-from odoo import models, fields
+from odoo import models, fields, api
 
 
 class ResUsers(models.Model):
@@ -22,6 +22,14 @@ class ResUsers(models.Model):
         'cid',
         'Stores',
     )
+
+    @api.multi
+    def write(self, values):
+        res = super().write(values)
+        # clear cache rules when store changes
+        if 'store_id' in values:
+            self.env['ir.rule'].clear_caches()
+        return res
 
     def __init__(self, pool, cr):
         """ Override of __init__ to add access rights on
