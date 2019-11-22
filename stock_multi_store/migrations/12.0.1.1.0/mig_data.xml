@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="stock_picking_type_store_rule" model="ir.rule">
+        <field name="perm_read" eval="False"/>
+    </record>
+</odoo>

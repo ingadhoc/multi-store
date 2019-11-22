@@ -53,18 +53,16 @@ class ResStore(models.Model):
                     _('Error! You can not create recursive stores.'))
 
     @api.model
-    def name_search(
-            self, name='', args=None, operator='ilike', limit=100):
+    def name_search(self, name='', args=None, operator='ilike', limit=100):
         context = dict(self._context or {})
+        newself = self
         if context.pop('user_preference', None):
             # We browse as superuser. Otherwise, the user would be able to
             # select only the currently visible stores (according to rules,
             # which are probably to allow to see the child stores) even if
             # she belongs to some other stores.
-            self = self.sudo()
-            user = self.env.user
-            store_ids = list(set(
-                [user.store_id.id] + [cmp.id for cmp in user.store_ids]))
-            args = (args or []) + [('id', 'in', store_ids)]
-        return super().name_search(
+            stores = self.env.user.store_id + self.env.user.store_ids
+            args = (args or []) + [('id', 'in', stores.ids)]
+            newself = newself.sudo()
+        return super(ResStore, newself.with_context(context)).name_search(
             name=name, args=args, operator=operator, limit=limit)

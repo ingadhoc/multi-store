@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="account_journal_store_rule" model="ir.rule">
+        <field name="perm_read" eval="False"/>
+    </record>
+
+</odoo>
