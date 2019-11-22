@@ -5,6 +5,7 @@
         <field name="model_id" ref="account.model_account_journal"/>
         <field name="global" eval="True"/>
         <field name="domain_force">['|',('store_id','=',False),('store_id','child_of',[user.store_id.id])]</field>
+        <field name="perm_read" eval="False"/>
     </record>
 
     <record id="account_move_store_rule" model="ir.rule">
