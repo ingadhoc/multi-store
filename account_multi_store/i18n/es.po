@@ -3,26 +3,22 @@
 # * account_multi_store
 # 
 # Translators:
-# Nicolas Mac Rouillon <nmr@ingadhoc.com>, 2017
-# Juan José Scarafía <scarafia.juanjose@gmail.com>, 2017
+# Juan José Scarafía <scarafia.juanjose@gmail.com>, 2019
+# Federico La Torre <3doeste@gmail.com>, 2019
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 9.0c\n"
+"Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-20 20:04+0000\n"
-"PO-Revision-Date: 2017-02-20 20:04+0000\n"
-"Last-Translator: Juan José Scarafía <scarafia.juanjose@gmail.com>, 2017\n"
+"POT-Creation-Date: 2019-11-22 15:37+0000\n"
+"PO-Revision-Date: 2019-09-02 23:45+0000\n"
+"Last-Translator: Federico La Torre <3doeste@gmail.com>, 2019\n"
 "Language-Team: Spanish (https://www.transifex.com/adhoc/teams/46451/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-#. module: account_multi_store
-#: model:ir.model,name:account_multi_store.model_account_move
-msgid "Account Entry"
-msgstr "Entrada contable"
 
 #. module: account_multi_store
 #: model:ir.model,name:account_multi_store.model_account_invoice
@@ -35,16 +31,25 @@ msgid "Journal"
 msgstr "Diario"
 
 #. module: account_multi_store
+#: model:ir.model,name:account_multi_store.model_account_move
+msgid "Journal Entries"
+msgstr "Entradas de Diario"
+
+#. module: account_multi_store
 #: model:ir.model,name:account_multi_store.model_account_move_line
 msgid "Journal Item"
 msgstr "Apunte Contable"
 
 #. module: account_multi_store
-#: model:ir.model.fields,field_description:account_multi_store.field_res_store_journal_ids
-#: model:ir.model.fields,field_description:account_multi_store.field_res_store_journals_count
-#: model:ir.ui.view,arch_db:account_multi_store.view_res_store_form
+#: model:ir.model.fields,field_description:account_multi_store.field_res_store__journal_ids
+#: model_terms:ir.ui.view,arch_db:account_multi_store.view_res_store_form
 msgid "Journals"
 msgstr "Diarios"
+
+#. module: account_multi_store
+#: model:ir.model.fields,field_description:account_multi_store.field_res_store__journals_count
+msgid "Journals Count"
+msgstr "Recuento de Diarios"
 
 #. module: account_multi_store
 #: model:ir.model,name:account_multi_store.model_account_payment
@@ -52,25 +57,25 @@ msgid "Payments"
 msgstr "Pagos"
 
 #. module: account_multi_store
-#: model:ir.model.fields,field_description:account_multi_store.field_account_invoice_store_id
-#: model:ir.model.fields,field_description:account_multi_store.field_account_journal_store_id
-#: model:ir.model.fields,field_description:account_multi_store.field_account_move_line_store_id
-#: model:ir.model.fields,field_description:account_multi_store.field_account_move_store_id
-#: model:ir.model.fields,field_description:account_multi_store.field_account_payment_store_id
-#: model:ir.ui.view,arch_db:account_multi_store.view_account_invoice_filter
-#: model:ir.ui.view,arch_db:account_multi_store.view_account_journal_search
-#: model:ir.ui.view,arch_db:account_multi_store.view_account_move_filter
-#: model:ir.ui.view,arch_db:account_multi_store.view_account_move_line_filter
-#: model:ir.ui.view,arch_db:account_multi_store.view_account_payment_search
+#: model:ir.model.fields,field_description:account_multi_store.field_account_invoice__store_id
+#: model:ir.model.fields,field_description:account_multi_store.field_account_journal__store_id
+#: model:ir.model.fields,field_description:account_multi_store.field_account_move__store_id
+#: model:ir.model.fields,field_description:account_multi_store.field_account_move_line__store_id
+#: model:ir.model.fields,field_description:account_multi_store.field_account_payment__store_id
+#: model_terms:ir.ui.view,arch_db:account_multi_store.view_account_invoice_filter
+#: model_terms:ir.ui.view,arch_db:account_multi_store.view_account_journal_search
+#: model_terms:ir.ui.view,arch_db:account_multi_store.view_account_move_filter
+#: model_terms:ir.ui.view,arch_db:account_multi_store.view_account_move_line_filter
+#: model_terms:ir.ui.view,arch_db:account_multi_store.view_account_payment_search
 msgid "Store"
 msgstr "Sucursal"
 
 #. module: account_multi_store
-#: model:ir.model.fields,help:account_multi_store.field_account_invoice_store_id
-#: model:ir.model.fields,help:account_multi_store.field_account_journal_store_id
-#: model:ir.model.fields,help:account_multi_store.field_account_move_line_store_id
-#: model:ir.model.fields,help:account_multi_store.field_account_move_store_id
-#: model:ir.model.fields,help:account_multi_store.field_account_payment_store_id
+#: model:ir.model.fields,help:account_multi_store.field_account_invoice__store_id
+#: model:ir.model.fields,help:account_multi_store.field_account_journal__store_id
+#: model:ir.model.fields,help:account_multi_store.field_account_move__store_id
+#: model:ir.model.fields,help:account_multi_store.field_account_move_line__store_id
+#: model:ir.model.fields,help:account_multi_store.field_account_payment__store_id
 msgid ""
 "Store used for data analysys and also users that are not of this store, can "
 "only see this journal records but can not post or modify  any entry on them."
