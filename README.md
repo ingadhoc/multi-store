@@ -1,6 +1,6 @@
-[![Runbot Status](http://runbot.adhoc.com.ar/runbot/badge/flat/28/12.0.svg)](http://runbot.adhoc.com.ar/runbot/repo/github-com-ingadhoc-multi-store-28)
-[![Build Status](https://travis-ci.org/ingadhoc/multi-store.svg?branch=12.0)](https://travis-ci.org/ingadhoc/multi-store)
-[![Coverage Status](https://coveralls.io/repos/ingadhoc/multi-store/badge.png?branch=12.0)](https://coveralls.io/r/ingadhoc/multi-store?branch=12.0)
+[![Runbot Status](http://runbot.adhoc.com.ar/runbot/badge/flat/28/13.0.svg)](http://runbot.adhoc.com.ar/runbot/repo/github-com-ingadhoc-multi-store-28)
+[![Build Status](https://travis-ci.org/ingadhoc/multi-store.svg?branch=13.0)](https://travis-ci.org/ingadhoc/multi-store)
+[![Coverage Status](https://coveralls.io/repos/ingadhoc/multi-store/badge.png?branch=13.0)](https://coveralls.io/r/ingadhoc/multi-store?branch=13.0)
 [![Code Climate](https://codeclimate.com/github/ingadhoc/multi-store/badges/gpa.svg)](https://codeclimate.com/github/ingadhoc/multi-store)
 
 # ADHOC Multi Store
@@ -26,7 +26,7 @@ Cambiar valores por defecto al crear cada cosa, debría filtrar solos por los de
 
 Translation Status
 ------------------
-[![Transifex Status](https://www.transifex.com/projects/p/ingadhoc-multi-store-12-0/chart/image_png)](https://www.transifex.com/projects/p/ingadhoc-multi-store-12-0)
+[![Transifex Status](https://www.transifex.com/projects/p/ingadhoc-multi-store-13-0/chart/image_png)](https://www.transifex.com/projects/p/ingadhoc-multi-store-13-0)
 
 ----
 
