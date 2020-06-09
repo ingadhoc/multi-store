@@ -40,8 +40,6 @@
     'demo': [
         'demo/res_store_demo.xml',
     ],
-    'test': [
-    ],
     'installable': True,
     'auto_install': False,
     'application': True,
