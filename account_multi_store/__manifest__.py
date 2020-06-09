@@ -19,7 +19,7 @@
 ##############################################################################
 {
     'name': 'Multi Store for Accounting',
-    'version': '12.0.1.1.0',
+    'version': '13.0.1.0.0',
     'category': 'Accounting',
     'sequence': 14,
     'summary': '',
@@ -33,7 +33,6 @@
         'base_multi_store',
     ],
     'data': [
-        'views/account_invoice_views.xml',
         'views/account_journal_views.xml',
         'views/account_move_line_views.xml',
         'views/account_move_views.xml',
@@ -45,7 +44,7 @@
         # TODO fix demo data, perhups yml
         # 'demo/account_demo.xml',
     ],
-    'installable': False,
+    'installable': True,
     'auto_install': True,
     'application': False,
 }

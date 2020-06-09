@@ -11,13 +11,13 @@ class AccountJournal(models.Model):
     store_id = fields.Many2one(
         'res.store',
         'Store',
-        help="Store used for data analysys and also users that are not of this"
+        help="Store used for data analysis and also users that are not of this"
         " store, can only see this journal records but can not post or modify "
         " any entry on them."
     )
 
     @api.model
-    def search(self, args, offset=0, limit=None, order=None, count=False):
+    def _search(self, args, offset=0, limit=None, order=None, count=False, access_rights_uid=None):
         """
         Para que usuarios los usuarios no puedan elegir diarios donde no puedan
         escribir, modificamos la funcion search. No lo hacemos por regla de
@@ -26,8 +26,6 @@ class AccountJournal(models.Model):
         """
         user = self.env.user
         # if superadmin, do not apply
-        if user.id != 1:
+        if not self.env.is_superuser():
             args += ['|', ('store_id', '=', False), ('store_id', 'child_of', [user.store_id.id])]
-
-        return super(AccountJournal, self).search(
-            args, offset, limit, order, count=count)
+        return super()._search(args, offset, limit, order, count=count, access_rights_uid=access_rights_uid)
