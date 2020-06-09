@@ -16,14 +16,6 @@
         <field name="domain_force">['|',('journal_id.store_id','=',False),('journal_id.store_id','child_of',[user.store_id.id])]</field>
     </record>
 
-    <record id="account_invoice_store_rule" model="ir.rule">
-        <field name="name">Invoice multi-store</field>
-        <field name="model_id" ref="account.model_account_invoice"/>
-        <field name="global" eval="True"/>
-        <field name="perm_read" eval="False"/>
-        <field name="domain_force">['|',('journal_id.store_id','=',False),('journal_id.store_id','child_of',[user.store_id.id])]</field>
-    </record>
-
     <record id="account_payment_store_rule" model="ir.rule">
         <field name="name">Payment multi-store</field>
         <field name="model_id" ref="account.model_account_payment"/>
