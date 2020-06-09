@@ -2,7 +2,7 @@
 # For copyright and license notices, see __manifest__.py file in module root
 # directory
 ##############################################################################
-from odoo import models, fields, api
+from odoo import models, fields
 
 
 class ResUsers(models.Model):
@@ -23,7 +23,6 @@ class ResUsers(models.Model):
         'Stores',
     )
 
-    @api.multi
     def write(self, values):
         res = super().write(values)
         # clear cache rules when store changes
