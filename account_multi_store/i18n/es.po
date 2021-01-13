@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-10 18:31+0000\n"
+"POT-Creation-Date: 2021-01-12 22:51+0000\n"
 "PO-Revision-Date: 2020-06-10 18:31+0000\n"
 "Last-Translator: Juan José Scarafía <scarafia.juanjose@gmail.com>, 2020\n"
 "Language-Team: Spanish (https://www.transifex.com/adhoc/teams/46451/es/)\n"
@@ -51,6 +51,7 @@ msgid "Payments"
 msgstr "Pagos"
 
 #. module: account_multi_store
+#: model:ir.model.fields,field_description:account_multi_store.field_account_bank_statement_import_journal_creation__store_id
 #: model:ir.model.fields,field_description:account_multi_store.field_account_journal__store_id
 #: model:ir.model.fields,field_description:account_multi_store.field_account_move__store_id
 #: model:ir.model.fields,field_description:account_multi_store.field_account_move_line__store_id
@@ -64,6 +65,7 @@ msgid "Store"
 msgstr "Sucursal"
 
 #. module: account_multi_store
+#: model:ir.model.fields,help:account_multi_store.field_account_bank_statement_import_journal_creation__store_id
 #: model:ir.model.fields,help:account_multi_store.field_account_journal__store_id
 #: model:ir.model.fields,help:account_multi_store.field_account_move__store_id
 #: model:ir.model.fields,help:account_multi_store.field_account_move_line__store_id
