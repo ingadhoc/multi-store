@@ -19,7 +19,7 @@
 ##############################################################################
 {
     'name': 'Multi Store for Purchase',
-    'version': '12.0.1.0.0',
+    'version': '12.0.1.0.1',
     'category': 'Accounting',
     'sequence': 14,
     'summary': '',
@@ -30,6 +30,7 @@
     ],
     'depends': [
         'purchase',
+        'purchase_stock',
         'base_multi_store',
     ],
     'data': [
