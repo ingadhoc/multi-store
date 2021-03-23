@@ -9,7 +9,7 @@
             <xpath expr="//page[@name='access_rights']/group" position="after">
                 <group string="Allowed Stores" groups="base_multi_store.group_multi_store">
                     <field string="Allowed Stores" name="store_ids" widget="many2many_tags"/>
-                    <field string="Current Store" name="store_id" context="{'user_preference': 0}"/>
+                    <field string="Current Store" name="store_id" context="{'user_preference': 0}" attrs="{'required': [('store_ids','!=', []])]}"/>
                 </group>
             </xpath>
         </field>
@@ -20,9 +20,11 @@
         <field name="model">res.users</field>
         <field name="inherit_id" ref="base.view_users_form_simple_modif"/>
         <field name="arch" type="xml">
-            <field name="tz" position="after">
-                <field name="store_id" domain="['|', ('company_id', '=', False),('company_id', '=', company_id)]" readonly="0" context="{'user_preference':0}" options="{'no_create': True}" groups="base_multi_store.group_multi_store"/>
-            </field>
+            <group name="preferences">
+                <group name="stores">
+                    <field name="store_id" context="{'user_preference':0}" options="{'no_create': True}" groups="base_multi_store.group_multi_store"/>
+                </group>
+            </group>
         </field>
     </record>
 </odoo>
