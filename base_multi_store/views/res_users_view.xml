@@ -9,7 +9,7 @@
             <xpath expr="//page[@name='access_rights']/group" position="after">
                 <group string="Allowed Stores" groups="base_multi_store.group_multi_store">
                     <field string="Allowed Stores" name="store_ids" widget="many2many_tags"/>
-                    <field string="Current Store" name="store_id" context="{'user_preference': 0}" attrs="{'required': [('store_ids','!=', []])]}"/>
+                    <field string="Current Store" name="store_id" context="{'user_preference': 0}" attrs="{'required': [('store_ids','!=', [])]}"/>
                 </group>
             </xpath>
         </field>
