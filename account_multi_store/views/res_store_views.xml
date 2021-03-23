@@ -18,7 +18,7 @@
             </div>
             <notebook>
                 <page string="Journals" name="journals">
-                    <field name="journal_ids"/>
+                    <field name="journal_ids" widget="many2many_tags"/>
                 </page>
             </notebook>
         </field>
