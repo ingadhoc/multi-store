@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <!-- Sale Order Search -->
+    <record id="view_pos_order_filter" model="ir.ui.view">
+        <field name="name">pos.order.filter</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_order_filter"/>
+        <field name="arch" type="xml">
+            <field name="config_id" position="after">
+                <field name="store_id" groups="base_multi_store.group_multi_store"/>
+            </field>
+            <filter name="order_month" position="after">
+                <filter name="by_store" string="Store" context="{'group_by':'store_id'}" groups="base_multi_store.group_multi_store"/>
+            </filter>
+        </field>
+    </record>
+
+    <!-- model.name inherit form view -->
+    <record id="view_id" model="ir.ui.view">
+        <field name="name">pos.config.view.form</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+        <field name="arch" type="xml">
+            <!-- Add your xpath here -->
+            <div id="inventory_location" position="inside">
+                <div class="col-12 col-lg-6 o_setting_box" groups="base_multi_store.group_multi_store">
+                    <div class="o_setting_right_pane">
+                        <label for="store_id"/>
+                        <div class="text-muted">
+                                Store related to the location
+                        </div>
+                        <div>
+                            <field name="store_id" readonly="1"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </field>
+    </record>
+</odoo>
