@@ -1,0 +1,38 @@
+#. module: account_multi_store
+#: model:ir.model,name:account_multi_store.model_account_invoice
+msgid "Invoice"
+msgstr "Fattura"
+
+#. module: account_multi_store
+#: model:ir.model,name:account_multi_store.model_account_journal
+msgid "Journal"
+msgstr "Registro"
+
+#. module: account_multi_store
+#: model:ir.model,name:account_multi_store.model_account_move
+msgid "Journal Entries"
+msgstr "Registrazioni contabili"
+
+#. module: account_multi_store
+#: model:ir.model,name:account_multi_store.model_account_move_line
+msgid "Journal Item"
+msgstr "Movimento contabile"
+
+#. module: account_multi_store
+#: model:ir.model,name:account_multi_store.model_account_payment
+msgid "Payments"
+msgstr "Pagamenti"
+
+#. module: account_multi_store
+#: model_terms:ir.ui.view,arch_db:account_multi_store.view_account_invoice_filter
+#: model_terms:ir.ui.view,arch_db:account_multi_store.view_account_journal_search
+#: model_terms:ir.ui.view,arch_db:account_multi_store.view_account_move_filter
+#: model_terms:ir.ui.view,arch_db:account_multi_store.view_account_move_line_filter
+#: model_terms:ir.ui.view,arch_db:account_multi_store.view_account_payment_search
+msgid "Store"
+msgstr "Negozio"
+
+#. module: account_multi_store
+#: model:ir.model,name:account_multi_store.model_res_store
+msgid "Stores"
+msgstr "Negozi"

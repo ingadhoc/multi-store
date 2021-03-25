@@ -40,6 +40,8 @@ class ResStore(models.Model):
         'Users'
     )
 
+    active = fields.Boolean('Active', default=True)
+
     _sql_constraints = [
         ('name_uniq', 'unique (name, company_id)',
             'The store name must be unique per company!')
@@ -51,6 +53,11 @@ class ResStore(models.Model):
             if not rec._check_recursion():
                 raise ValidationError(
                     _('Error! You can not create recursive stores.'))
+
+    @api.multi
+    def toggle_active(self):
+        for record in self:
+            record.active = not record.active
 
     @api.model
     def name_search(self, name='', args=None, operator='ilike', limit=100):

@@ -6,24 +6,17 @@
         <field name="model">res.store</field>
         <field name="inherit_id" ref="base_multi_store.view_res_store_form"/>
         <field name="arch" type="xml">
-
-            <div name="buttons">
-                <button
-                    class="oe_inline oe_stat_button"
-                    name="%(stock.action_warehouse_form)d"
-                    type="action"
-                    context="{'search_default_store_id': active_id}"
-                    icon="fa-home">
+            <button name="toggle_active" position="before">
+                <button class="oe_stat_button" name="%(stock.action_warehouse_form)d" type="action" context="{'search_default_store_id': active_id}" icon="fa-home">
                     <field name="warehouses_count" widget="statinfo"/>
                 </button>
-            </div>
+            </button>
 
-            <notebook>
-                <page string="Warehouses" name="warehouses">
-                    <field name="warehouse_ids"/>
-                </page>
-            </notebook>
-
+            <group name="store" position="after">
+                <group>
+                    <field name="warehouse_ids" widget="many2many_tags"/>
+                </group>
+            </group>
         </field>
     </record>
 </odoo>

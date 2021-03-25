@@ -10,7 +10,7 @@
                 <field name="store_id" groups="base_multi_store.group_multi_store"/>
             </field>
             <group>
-                <filter name="store" string="Store" context="{'group_by':'store_id'}" groups="base_multi_store.group_multi_store"/>
+                <filter name="by_store" string="Store" context="{'group_by':'store_id'}" groups="base_multi_store.group_multi_store"/>
             </group>
         </field>
     </record>
