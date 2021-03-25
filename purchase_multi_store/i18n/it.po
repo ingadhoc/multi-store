@@ -1,0 +1,9 @@
+#. module: purchase_multi_store
+#: model:ir.model,name:purchase_multi_store.model_purchase_order
+msgid "Purchase Order"
+msgstr "Ordine di acquisto"
+
+#. module: purchase_multi_store
+#: model_terms:ir.ui.view,arch_db:purchase_multi_store.view_purchase_order_filter
+msgid "Store"
+msgstr "Negozio"

@@ -1,0 +1,9 @@
+#. module: sale_multi_store
+#: model:ir.model,name:sale_multi_store.model_sale_order
+msgid "Sale Order"
+msgstr "Ordine di vendita"
+
+#. module: sale_multi_store
+#: model_terms:ir.ui.view,arch_db:sale_multi_store.view_sales_order_filter
+msgid "Store"
+msgstr "Negozio"

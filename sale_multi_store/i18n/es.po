@@ -1,10 +1,10 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * sale_multi_store
-# 
+#
 # Translators:
 # Juan José Scarafía <scarafia.juanjose@gmail.com>, 2019
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
@@ -13,30 +13,30 @@ msgstr ""
 "PO-Revision-Date: 2018-09-11 22:02+0000\n"
 "Last-Translator: Juan José Scarafía <scarafia.juanjose@gmail.com>, 2019\n"
 "Language-Team: Spanish (https://www.transifex.com/adhoc/teams/46451/es/)\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: sale_multi_store
 #: model:ir.model,name:sale_multi_store.model_sale_order
-msgid "Quotation"
-msgstr "Presupuesto"
+msgid "Sale Order"
+msgstr ""
 
 #. module: sale_multi_store
-#: model:ir.model.fields,field_description:sale_multi_store.field_sale_order_store_id
-#: model:ir.ui.view,arch_db:sale_multi_store.view_sales_order_filter
+#: model_terms:ir.ui.view,arch_db:sale_multi_store.view_sales_order_filter
 msgid "Store"
 msgstr "Sucursal"
 
-#. module: sale_multi_store
-#: model:ir.model.fields,help:sale_multi_store.field_sale_order_store_id
-msgid ""
-"Store used for data analysys and also users that are not of this store, can "
-"only see this warehouse records but can not post or modify any record "
-"related to them."
-msgstr ""
-"Almacén utilizado para el análisis de datos y también los usuarios que no "
-"son de esta sucursal, sólo puede ver los registros de este almacén, pero no "
-"puede publicar o modificar cualquier registro relacionado con ellos."
+#~ msgid "Quotation"
+#~ msgstr "Presupuesto"
+
+#~ msgid ""
+#~ "Store used for data analysys and also users that are not of this store, "
+#~ "can only see this warehouse records but can not post or modify any record "
+#~ "related to them."
+#~ msgstr ""
+#~ "Almacén utilizado para el análisis de datos y también los usuarios que no "
+#~ "son de esta sucursal, sólo puede ver los registros de este almacén, pero "
+#~ "no puede publicar o modificar cualquier registro relacionado con ellos."

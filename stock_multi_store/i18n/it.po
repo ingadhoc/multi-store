@@ -1,0 +1,24 @@
+#. module: stock_multi_store
+#: model:ir.model,name:stock_multi_store.model_stock_picking_type
+msgid "Picking Type"
+msgstr "Tipo di prelievo"
+
+#. module: stock_multi_store
+#: model_terms:ir.ui.view,arch_db:stock_multi_store.view_picking_internal_search
+msgid "Store"
+msgstr "Negozio"
+
+#. module: stock_multi_store
+#: model:ir.model,name:stock_multi_store.model_res_store
+msgid "Stores"
+msgstr "Negozi"
+
+#. module: stock_multi_store
+#: model:ir.model,name:stock_multi_store.model_stock_picking
+msgid "Transfer"
+msgstr "Trasferimento"
+
+#. module: stock_multi_store
+#: model:ir.model,name:stock_multi_store.model_stock_warehouse
+msgid "Warehouse"
+msgstr "Magazzino"

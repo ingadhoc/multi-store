@@ -1,10 +1,10 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * base_multi_store
-# 
+#
 # Translators:
 # Juan José Scarafía <scarafia.juanjose@gmail.com>, 2019
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
@@ -13,10 +13,10 @@ msgstr ""
 "PO-Revision-Date: 2019-09-02 23:46+0000\n"
 "Last-Translator: Juan José Scarafía <scarafia.juanjose@gmail.com>, 2019\n"
 "Language-Team: Spanish (https://www.transifex.com/adhoc/teams/46451/es/)\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: base_multi_store
@@ -25,25 +25,10 @@ msgid "Allowed Stores"
 msgstr "Sucursales Permitidas"
 
 #. module: base_multi_store
-#: model:ir.model.fields,field_description:base_multi_store.field_res_store__child_ids
-msgid "Child Stores"
-msgstr "Sucursales hijas"
-
-#. module: base_multi_store
-#: model:ir.model.fields,field_description:base_multi_store.field_res_store__company_id
 #: model_terms:ir.ui.view,arch_db:base_multi_store.view_res_store_form
+#: model_terms:ir.ui.view,arch_db:base_multi_store.view_res_store_search
 msgid "Company"
 msgstr "Compañía"
-
-#. module: base_multi_store
-#: model:ir.model.fields,field_description:base_multi_store.field_res_store__create_uid
-msgid "Created by"
-msgstr "Creado por"
-
-#. module: base_multi_store
-#: model:ir.model.fields,field_description:base_multi_store.field_res_store__create_date
-msgid "Created on"
-msgstr "Created on"
 
 #. module: base_multi_store
 #: model_terms:ir.ui.view,arch_db:base_multi_store.view_store_users_form
@@ -51,42 +36,9 @@ msgid "Current Store"
 msgstr "Sucursal Actual"
 
 #. module: base_multi_store
-#: model:ir.model.fields,field_description:base_multi_store.field_res_store__display_name
-msgid "Display Name"
-msgstr "Nombre mostrado"
-
-#. module: base_multi_store
-#: code:addons/base_multi_store/models/res_store.py:53
-#, python-format
-msgid "Error! You can not create recursive stores."
-msgstr "¡Error! No puede crear sucursales recursivas."
-
-#. module: base_multi_store
-#: model:ir.model.fields,field_description:base_multi_store.field_res_store__id
-msgid "ID"
-msgstr "ID"
-
-#. module: base_multi_store
-#: model:ir.model.fields,help:base_multi_store.field_res_store__company_id
-msgid "If specified, this store will be only available on selected company"
+#: model_terms:ir.ui.view,arch_db:base_multi_store.view_res_store_search
+msgid "Group By..."
 msgstr ""
-"Si se especifica, esta sucursal sólo estará disponible en la empresa "
-"seleccionada"
-
-#. module: base_multi_store
-#: model:ir.model.fields,field_description:base_multi_store.field_res_store____last_update
-msgid "Last Modified on"
-msgstr "Última modificación en"
-
-#. module: base_multi_store
-#: model:ir.model.fields,field_description:base_multi_store.field_res_store__write_uid
-msgid "Last Updated by"
-msgstr "Última actualización de"
-
-#. module: base_multi_store
-#: model:ir.model.fields,field_description:base_multi_store.field_res_store__write_date
-msgid "Last Updated on"
-msgstr "Última Actualización el"
 
 #. module: base_multi_store
 #: model:res.groups,name:base_multi_store.group_multi_store
@@ -94,47 +46,71 @@ msgid "Multi Stores"
 msgstr "Multi Sucursales"
 
 #. module: base_multi_store
-#: model:ir.model.fields,field_description:base_multi_store.field_res_store__name
 #: model_terms:ir.ui.view,arch_db:base_multi_store.view_res_store_form
 msgid "Name"
 msgstr "Nombre"
 
 #. module: base_multi_store
 #: model_terms:ir.ui.view,arch_db:base_multi_store.view_res_store_form
-msgid "Parent"
-msgstr "Padre"
-
-#. module: base_multi_store
-#: model:ir.model.fields,field_description:base_multi_store.field_res_store__parent_id
+#: model_terms:ir.ui.view,arch_db:base_multi_store.view_res_store_search
 msgid "Parent Store"
 msgstr "Sucursal Padre"
 
 #. module: base_multi_store
-#: model:ir.model.fields,field_description:base_multi_store.field_res_users__store_id
-msgid "Store"
-msgstr "Sucursal"
-
-#. module: base_multi_store
 #: model:ir.actions.act_window,name:base_multi_store.action_store
 #: model:ir.model,name:base_multi_store.model_res_store
-#: model:ir.model.fields,field_description:base_multi_store.field_res_users__store_ids
 #: model:ir.ui.menu,name:base_multi_store.menu_action_res_store
+#: model_terms:ir.ui.view,arch_db:base_multi_store.view_res_store_search
 #: model_terms:ir.ui.view,arch_db:base_multi_store.view_res_store_tree
 msgid "Stores"
 msgstr "Sucursales"
 
 #. module: base_multi_store
-#: sql_constraint:res.store:0
-msgid "The store name must be unique per company!"
-msgstr "¡El nombre de la sucursal debe ser único por empresa!"
-
-#. module: base_multi_store
-#: model:ir.model.fields,help:base_multi_store.field_res_users__store_id
-msgid "The store this user is currently working for."
-msgstr "La sucursal en la que este usuario está trabajando actualmente."
-
-#. module: base_multi_store
 #: model:ir.model,name:base_multi_store.model_res_users
-#: model:ir.model.fields,field_description:base_multi_store.field_res_store__user_ids
 msgid "Users"
 msgstr "Usuarios"
+
+#~ msgid "Child Stores"
+#~ msgstr "Sucursales hijas"
+
+#~ msgid "Created by"
+#~ msgstr "Creado por"
+
+#~ msgid "Created on"
+#~ msgstr "Created on"
+
+#~ msgid "Display Name"
+#~ msgstr "Nombre mostrado"
+
+#, python-format
+#~ msgid "Error! You can not create recursive stores."
+#~ msgstr "¡Error! No puede crear sucursales recursivas."
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "If specified, this store will be only available on selected company"
+#~ msgstr ""
+#~ "Si se especifica, esta sucursal sólo estará disponible en la empresa "
+#~ "seleccionada"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Última modificación en"
+
+#~ msgid "Last Updated by"
+#~ msgstr "Última actualización de"
+
+#~ msgid "Last Updated on"
+#~ msgstr "Última Actualización el"
+
+#~ msgid "Parent"
+#~ msgstr "Padre"
+
+#~ msgid "Store"
+#~ msgstr "Sucursal"
+
+#~ msgid "The store name must be unique per company!"
+#~ msgstr "¡El nombre de la sucursal debe ser único por empresa!"
+
+#~ msgid "The store this user is currently working for."
+#~ msgstr "La sucursal en la que este usuario está trabajando actualmente."

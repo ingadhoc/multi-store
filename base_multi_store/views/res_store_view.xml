@@ -53,6 +53,7 @@
             <search string="Stores">
                 <!-- Add your fields here -->
                 <field name="name" />
+                <filter name="archived" string="Archived" domain="[('active','=', False)]" />
                 <group expand="0" string="Group By...">
                     <filter name="by_parent_id" string="Company" domain="[]" groups="base.group_multi_company" context="{'group_by':'company_id'}" />
 

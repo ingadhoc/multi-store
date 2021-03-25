@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * sale_multi_store
-# 
+#
 # Translators:
 # Juan José Scarafía <scarafia.juanjose@gmail.com>, 2018
 msgid ""
@@ -12,27 +12,20 @@ msgstr ""
 "PO-Revision-Date: 2018-09-11 22:01+0000\n"
 "Last-Translator: Juan José Scarafía <scarafia.juanjose@gmail.com>, 2018\n"
 "Language-Team: Russian (https://www.transifex.com/adhoc/teams/46451/ru/)\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: ru\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #. module: sale_multi_store
 #: model:ir.model,name:sale_multi_store.model_sale_order
-msgid "Quotation"
+msgid "Sale Order"
 msgstr ""
 
 #. module: sale_multi_store
-#: model:ir.model.fields,field_description:sale_multi_store.field_sale_order_store_id
-#: model:ir.ui.view,arch_db:sale_multi_store.view_sales_order_filter
+#: model_terms:ir.ui.view,arch_db:sale_multi_store.view_sales_order_filter
 msgid "Store"
 msgstr "Магазин"
-
-#. module: sale_multi_store
-#: model:ir.model.fields,help:sale_multi_store.field_sale_order_store_id
-msgid ""
-"Store used for data analysys and also users that are not of this store, can "
-"only see this warehouse records but can not post or modify any record "
-"related to them."
-msgstr ""
