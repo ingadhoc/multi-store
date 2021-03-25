@@ -7,8 +7,8 @@
         <field name="arch" type="xml">
             <tree string="Stores">
                 <field name="name"/>
-                <field name="parent_id"/>
                 <field name="company_id" groups="base.group_multi_company"/>
+                <field name="parent_id"/>
             </tree>
         </field>
     </record>
@@ -20,26 +20,49 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
-                    <div class="oe_button_box" name="buttons"> </div>
-                    <group>
-                    <field name="id" invisible="1"/>
-                    <div class="oe_title oe_left">
-                        <div class="oe_edit_only">
-                            <label for="name"/>
-                        </div>
-                        <h1>
-                            <field name="name" default_focus="1" placeholder="Name"/>
-                        </h1>
-                        <field name="parent_id" placeholder="Parent" domain="[('id', '!=', id), ('company_id', '=', company_id)]" context="{'default_company_id': company_id}"/>
-                        <field name="company_id" placeholder="Company" groups="base.group_multi_company"/>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                        </button>
                     </div>
-                        <notebook>
-                        </notebook>
+                    <group name="store">
+                        <field name="id" invisible="1"/>
+                        <div class="oe_title oe_left">
+                            <div class="oe_edit_only">
+                                <label for="name"/>
+                            </div>
+                            <h1>
+                                <field name="name" default_focus="1" placeholder="Name"/>
+                            </h1>
+                            <group>
+                                <field name="company_id" placeholder="Company" groups="base.group_multi_company"/>
+                                <field name="parent_id" placeholder="Parent Store" domain="[('id', '!=', id), ('company_id', '=', company_id)]" context="{'default_company_id': company_id}"/>
+                            </group>
+                        </div>
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
+
+    <!-- model.name search view -->
+    <record id="view_res_store_search" model="ir.ui.view">
+        <field name="name">res.store.search</field>
+        <field name="model">res.store</field>
+        <field name="arch" type="xml">
+            <search string="Stores">
+                <!-- Add your fields here -->
+                <field name="name" />
+                <group expand="0" string="Group By...">
+                    <filter name="by_parent_id" string="Company" domain="[]" groups="base.group_multi_company" context="{'group_by':'company_id'}" />
+
+                    <filter name="by_company_id" string="Parent Store" domain="[]" groups="base.group_multi_company" context="{'group_by':'parent_id'}" />
+
+                </group>
+            </search>
+        </field>
+    </record>
+
 
     <record id="action_store" model="ir.actions.act_window">
         <field name="name">Stores</field>
@@ -47,13 +70,9 @@
         <field name="res_model">res.store</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_res_store_search" />
         <field name="domain"></field>
     </record>
 
-    <menuitem
-        action="action_store"
-        id="menu_action_res_store"
-        parent="base.menu_users"
-        sequence="20"
-    />
+    <menuitem action="action_store" id="menu_action_res_store" parent="base.menu_users" sequence="20" />
 </odoo>

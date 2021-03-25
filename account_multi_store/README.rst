@@ -70,6 +70,9 @@ Images
 Contributors
 ------------
 
+* Giovanni Serra <giovanni@gslab.it>
+
+
 Maintainer
 ----------
 

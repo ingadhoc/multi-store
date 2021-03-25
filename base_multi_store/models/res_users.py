@@ -2,7 +2,8 @@
 # For copyright and license notices, see __manifest__.py file in module root
 # directory
 ##############################################################################
-from odoo import models, fields, api
+from odoo import _, models, fields, api
+from odoo.exceptions import ValidationError
 
 
 class ResUsers(models.Model):
@@ -23,14 +24,6 @@ class ResUsers(models.Model):
         'Stores',
     )
 
-    @api.multi
-    def write(self, values):
-        res = super().write(values)
-        # clear cache rules when store changes
-        if 'store_id' in values:
-            self.env['ir.rule'].clear_caches()
-        return res
-
     def __init__(self, pool, cr):
         """ Override of __init__ to add access rights on
         store fields. Access rights are disabled by
@@ -44,3 +37,42 @@ class ResUsers(models.Model):
         # duplicate list to avoid modifying the original reference
         self.SELF_READABLE_FIELDS = list(self.SELF_READABLE_FIELDS)
         self.SELF_READABLE_FIELDS.append('store_id')
+
+    @api.constrains('store_id')
+    def _check_store_id(self):
+        for rec in self:
+            if rec.store_id and rec.store_id not in rec.store_ids:
+                raise ValidationError(
+                    _("The selected store it's not allow for your user")
+                )
+
+    @api.model
+    def create(self, values):
+        values = self._remove_reified_groups(values)
+        user = super().create(values)
+        group_multi_store = self.env.ref('base_multi_store.group_multi_store', False)
+        if group_multi_store and 'store_ids' in values:
+            if len(user.store_ids) <= 1 and user.id in group_multi_store.users.ids:
+                user.write({'groups_id': [(3, group_multi_store.id)]})
+            elif len(user.store_ids) > 1 and user.id not in group_multi_store.users.ids:
+                user.write({'groups_id': [(4, group_multi_store.id)]})
+        return user
+
+    @api.multi
+    def write(self, values):
+        values = self._remove_reified_groups(values)
+        res = super().write(values)
+        # clear cache rules when store changes
+        if 'store_id' in values:
+            self.env['ir.rule'].clear_caches()
+
+        group_multi_store = self.env.ref('base_multi_store.group_multi_store', False)
+        if group_multi_store and 'store_ids' in values:
+            for user in self:
+                if len(user.store_ids) <= 1 and user.id in group_multi_store.users.ids:
+                    user.write({'groups_id': [(3, group_multi_store.id)]})
+                elif len(
+                    user.store_ids
+                ) > 1 and user.id not in group_multi_store.users.ids:
+                    user.write({'groups_id': [(4, group_multi_store.id)]})
+        return res

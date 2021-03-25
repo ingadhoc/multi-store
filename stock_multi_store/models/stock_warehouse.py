@@ -27,5 +27,8 @@ class StockWarehouse(models.Model):
         user = self.env.user
         # if superadmin, do not apply
         if user.id != 1:
-            args += ['|', ('store_id', '=', False), ('store_id', 'child_of', [user.store_id.id])]
+            args += [
+                '|', ('store_id', '=', False),
+                ('store_id', 'child_of', [user.store_id.id])
+            ]
         return super().search(args, offset, limit, order, count=count)
