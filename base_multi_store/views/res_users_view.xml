@@ -22,7 +22,7 @@
         <field name="arch" type="xml">
             <group name="preferences">
                 <group name="stores">
-                    <field name="store_id" context="{'user_preference':0}" options="{'no_create': True}" groups="base_multi_store.group_multi_store"/>
+                    <field name="store_id" context="{'user_preference':0}" options="{'no_create': True}"/>
                 </group>
             </group>
         </field>
