@@ -1,4 +1,4 @@
-[![Coverage Status](https://coveralls.io/repos/ingadhoc/multi-store/badge.png?branch=13.0)](https://coveralls.io/r/ingadhoc/multi-store?branch=13.0)
+[![Coverage Status](https://coveralls.io/repos/ingadhoc/multi-store/badge.png?branch=15.0)](https://coveralls.io/r/ingadhoc/multi-store?branch=15.0)
 [![Code Climate](https://codeclimate.com/github/ingadhoc/multi-store/badges/gpa.svg)](https://codeclimate.com/github/ingadhoc/multi-store)
 
 # ADHOC Multi Store
@@ -24,7 +24,7 @@ Cambiar valores por defecto al crear cada cosa, debría filtrar solos por los de
 
 Translation Status
 ------------------
-[![Transifex Status](https://www.transifex.com/projects/p/ingadhoc-multi-store-13-0/chart/image_png)](https://www.transifex.com/projects/p/ingadhoc-multi-store-13-0)
+[![Transifex Status](https://www.transifex.com/projects/p/ingadhoc-multi-store-15-0/chart/image_png)](https://www.transifex.com/projects/p/ingadhoc-multi-store-15-0)
 
 ----
 
