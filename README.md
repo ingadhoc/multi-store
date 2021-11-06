@@ -1,4 +1,3 @@
-[![Coverage Status](https://coveralls.io/repos/ingadhoc/multi-store/badge.png?branch=15.0)](https://coveralls.io/r/ingadhoc/multi-store?branch=15.0)
 [![Code Climate](https://codeclimate.com/github/ingadhoc/multi-store/badges/gpa.svg)](https://codeclimate.com/github/ingadhoc/multi-store)
 
 # ADHOC Multi Store
