@@ -13,6 +13,11 @@ class StockPickingType(models.Model):
         store=True,
     )
 
+    def write(self, vals):
+        if 'active' in vals and self.mapped('store_id'):
+            self = self.with_context(active_test=False)
+        return super().write(vals)
+
     @api.model
     def _search(self, args, offset=0, limit=None, order=None, count=False, access_rights_uid=None):
         """
