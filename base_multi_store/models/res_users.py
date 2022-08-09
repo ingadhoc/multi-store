@@ -24,20 +24,13 @@ class ResUsers(models.Model):
         'Stores',
     )
 
-    def __init__(self, pool, cr):
-        """ Override of __init__ to add access rights on
-        store fields. Access rights are disabled by
-        default, but allowed on some specific fields defined in
-        self.SELF_{READ/WRITE}ABLE_FIELDS.
-        """
-        init_res = super().__init__(pool, cr)
-        # duplicate list to avoid modifying the original reference
-        self.SELF_WRITEABLE_FIELDS = list(self.SELF_WRITEABLE_FIELDS)
-        self.SELF_WRITEABLE_FIELDS.append('store_id')
-        # duplicate list to avoid modifying the original reference
-        self.SELF_READABLE_FIELDS = list(self.SELF_READABLE_FIELDS)
-        self.SELF_READABLE_FIELDS.append('store_id')
-        return init_res
+    @property
+    def SELF_WRITEABLE_FIELDS(self):
+        return super().SELF_WRITEABLE_FIELDS + ['store_id']
+
+    @property
+    def SELF_READABLE_FIELDS(self):
+        return super().SELF_READABLE_FIELDS + ['store_id']
 
     @api.constrains('store_id', 'store_ids')
     def _check_store_id(self):
