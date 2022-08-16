@@ -11,7 +11,7 @@ class StockWarehouse(models.Model):
     store_id = fields.Many2one(
         'res.store',
         'Store',
-        help="Store used for data analysys and also users that are not of this"
+        help="Store used for data analysis and also users that are not of this"
         " store, can only see this warehouse records but can not post or"
         " modify any record related to them."
     )
@@ -24,7 +24,7 @@ class StockWarehouse(models.Model):
     @api.model
     def _search(self, args, offset=0, limit=None, order=None, count=False, access_rights_uid=None):
         """
-        Para que usuarios los usuarios no puedan elegir almacenes donde no puedan
+        Para que los usuarios no puedan elegir almacenes donde no puedan
         escribir, modificamos la funcion search. No lo hacemos por regla de
         permiso ya que si no pueden ver los diarios termina dando errores en
         cualquier lugar que se use un campo related a algo del diario
