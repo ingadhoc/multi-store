@@ -18,6 +18,8 @@ class ResStore(models.Model):
         compute='_compute_journals_count',
         string='Journals Count',
     )
+    only_allow_reonciliaton_of_this_store = fields.Boolean(
+        help='If enable, debt reconciliation will be only doable on items of this store')
 
     @api.depends('journal_ids')
     def _compute_journals_count(self):
