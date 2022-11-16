@@ -16,6 +16,11 @@
                     <field name="journals_count" widget="statinfo"/>
                 </button>
             </div>
+            <field name="parent_id" position="after">
+                <group>
+                    <field name="only_allow_reonciliaton_of_this_store"/>
+                </group>
+            </field>
             <notebook>
                 <page string="Journals" name="journals">
                     <field name="journal_ids" readonly="1" widget="many2many_tags"/>
