@@ -18,14 +18,8 @@
 #
 ##############################################################################
 {
-    'name': 'Multi Store for Accounting',
-<<<<<<< HEAD
-    'version': "15.0.1.0.0",
-||||||| parent of 144db84... temp
-    'version': '13.0.1.1.0',
-=======
-    'version': '13.0.1.2.0',
->>>>>>> 144db84... temp
+    'name': 'Multi Store on Payment Groups',
+    'version': '13.0.1.0.0',
     'category': 'Accounting',
     'sequence': 14,
     'summary': '',
@@ -37,20 +31,14 @@
     'depends': [
         'account',
         'base_multi_store',
+        'account_payment_group',
     ],
     'data': [
-        'views/account_journal_views.xml',
-        'views/account_move_line_views.xml',
-        'views/account_move_views.xml',
-        'views/account_payment_views.xml',
-        'views/res_store_views.xml',
-        'security/multi_store_security.xml',
+        'views/account_payment_group_views.xml',
     ],
     'demo': [
-        # TODO fix demo data, perhups yml
-        # 'demo/account_demo.xml',
     ],
     'installable': True,
-    'auto_install': True,
+    'auto_install': False,
     'application': False,
 }

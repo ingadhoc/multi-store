@@ -9,7 +9,7 @@
     </record>
 
     <record id="account_move_store_rule" model="ir.rule">
-        <field name="name">Account Entry</field>
+        <field name="name">Account Entry multi-store</field>
         <field name="model_id" ref="account.model_account_move"/>
         <field name="global" eval="True"/>
         <field name="perm_read" eval="False"/>
