@@ -10,42 +10,19 @@
    :target: https://www.gnu.org/licenses/agpl
    :alt: License: AGPL-3
 
-==========================
-Multi Store for Accounting
-==========================
+==============================
+Multi Stores on Payment Groups
+==============================
 
-Direct Linked Model:
+Add stores on payment group to:
+* Compute debt only of that store
+* Filter journal on payments for that store
+* If payment groups are created from somewhere else the store_id will be computed from payment if all the payments are from same store (no restrictions for now)
 
-* Account Journals
+May be on the future we can also add integration to receiptbooks
 
-Related Linked Models:
+TODO: por el momento no está mejorado que al querer agregar apuntes contables se filtre tmb por ese dominio porque requiere re-escribir el dominio de to_pay_move_line_ids, tal vez en v16+ podamos cambiar y que ese dominio venga definido por un campo calculado o algo mas heredable
 
-* Account Invoices
-* Account Entries
-* Account Vouchers
-* Account Move Line
-
-Installation
-============
-
-To install this module, you need to:
-
-This module should be auto-installed
-
-Configuration
-=============
-
-To configure this module, you need to:
-
-#. Go to Configuration / Companies / Stores and create Store Journals
-#. or you can select an store for existing journals
-
-Usage
-=====
-
-To use this module, you need to:
-
-#. Just usage.
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
