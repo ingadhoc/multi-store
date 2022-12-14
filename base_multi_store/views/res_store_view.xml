@@ -20,19 +20,18 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
-                    <div class="oe_button_box" name="buttons"> </div>
-                    <group>
+                    <div class="oe_button_box" name="button_box"> </div>
                     <field name="id" invisible="1"/>
-                    <div class="oe_title oe_left">
-                        <div class="oe_edit_only">
-                            <label for="name"/>
-                        </div>
+                    <div class="oe_title">
+                        <label for="name"/>
                         <h1>
                             <field name="name" default_focus="1" placeholder="Name"/>
                         </h1>
-                        <field name="company_id" placeholder="Company" groups="base.group_multi_company"/>
-                        <field name="parent_id" placeholder="Parent" domain="[('id', '!=', id),'|', ('company_id', '=', False), ('company_id', '=', company_id)]" context="{'default_company_id': company_id}"/>
                     </div>
+                    <group>
+                            <field name="company_id" invisible="1"/>
+                            <field name="company_id" placeholder="Company" groups="base.group_multi_company"/>
+                            <field name="parent_id" placeholder="Parent" domain="[('id', '!=', id),'|', ('company_id', '=', False), ('company_id', '=', company_id)]" context="{'default_company_id': company_id}"/>
                         <notebook>
                         </notebook>
                     </group>
