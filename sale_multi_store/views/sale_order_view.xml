@@ -8,6 +8,7 @@
         <field name="inherit_id" ref="sale.view_sales_order_filter"/>
         <field name="arch" type="xml">
             <field name="order_line" position="after">
+                <field name="store_id" invisible="1"/>
                 <field name="store_id" groups="base_multi_store.group_multi_store"/>
             </field>
             <group>
