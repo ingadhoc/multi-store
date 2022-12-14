@@ -39,18 +39,22 @@ class ResUsers(models.Model):
                 raise ValidationError(
                     _("The selected store it's not allow for your user"))
 
-    @api.model
-    def create(self, values):
-        values = self._remove_reified_groups(values)
-        user = super().create(values)
+    @api.model_create_multi
+    def create(self, vals_list):
+        new_vals_list = []
+        for values in vals_list:
+            new_vals_list.append(self._remove_reified_groups(values))
+        users = super().create(new_vals_list)
         group_multi_store = self.env.ref(
             'base_multi_store.group_multi_store', False)
-        if group_multi_store and 'store_ids' in values:
-            if len(user.store_ids) <= 1 and user.id in group_multi_store.users.ids:
-                user.write({'groups_id': [(3, group_multi_store.id)]})
-            elif len(user.store_ids) > 1 and user.id not in group_multi_store.users.ids:
-                user.write({'groups_id': [(4, group_multi_store.id)]})
-        return user
+        if group_multi_store:
+            for user, value in zip(users, new_vals_list):
+                if 'store_ids' in value:
+                    if len(user.store_ids) <= 1 and user.id in group_multi_store.users.ids:
+                        user.write({'groups_id': [(3, group_multi_store.id)]})
+                    elif len(user.store_ids) > 1 and user.id not in group_multi_store.users.ids:
+                        user.write({'groups_id': [(4, group_multi_store.id)]})
+        return users
 
     def write(self, values):
         values = self._remove_reified_groups(values)
