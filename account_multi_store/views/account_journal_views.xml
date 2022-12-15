@@ -6,9 +6,9 @@
         <field name="model">account.journal</field>
         <field name="inherit_id" ref="account.view_account_journal_form"/>
         <field name="arch" type="xml">
-            <field name="company_id" position="after">
+            <xpath expr="//group/group[2]" position="inside">
                 <field name="store_id" groups="base_multi_store.group_multi_store"/>
-            </field>
+            </xpath>
         </field>
     </record>
 
