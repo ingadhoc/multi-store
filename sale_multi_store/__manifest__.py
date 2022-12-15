@@ -30,7 +30,7 @@
     ],
     'depends': [
         'sale_stock',
-        'base_multi_store',
+        'stock_multi_store',
     ],
     'data': [
         'views/sale_order_view.xml',
