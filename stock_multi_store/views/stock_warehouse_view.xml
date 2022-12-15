@@ -12,14 +12,15 @@
         </field>
     </record>
 
-    <!-- New Warehouse Search -->
+    <!-- Search -->
     <record id="view_stock_warehouse_search" model="ir.ui.view">
         <field name="name">stock.warehouse.search</field>
         <field name="model">stock.warehouse</field>
+        <field name="inherit_id" ref="stock.stock_warehouse_view_search"/>
         <field name="arch" type="xml">
-            <search string="Search Stock_Warehouse">
+            <field name="name" position="after">
                 <field name="store_id" groups="base_multi_store.group_multi_store"/>
-            </search>
+            </field>
         </field>
     </record>
 </odoo>
