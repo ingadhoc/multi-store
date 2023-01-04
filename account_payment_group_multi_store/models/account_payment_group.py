@@ -6,7 +6,6 @@ class AccountPaymentGroup(models.Model):
 
     store_id = fields.Many2one(
         'res.store',
-        # related='journal_id.store_id',
         compute='_compute_store_id',
         readonly=False,
         store=True,

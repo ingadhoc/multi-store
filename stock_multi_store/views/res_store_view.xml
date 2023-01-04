@@ -20,7 +20,7 @@
 
             <notebook>
                 <page string="Warehouses" name="warehouses">
-                    <field name="warehouse_ids" readonly="1" widget="many2many_tags"/>
+                    <field name="warehouse_ids" widget="many2many" domain="[('store_id', '=', False)]"/>
                 </page>
             </notebook>
 

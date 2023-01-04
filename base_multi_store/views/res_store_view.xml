@@ -19,6 +19,7 @@
         <field name="model">res.store</field>
         <field name="arch" type="xml">
             <form>
+                <field name="company_id" invisible="1"/>
                 <sheet>
                     <div class="oe_button_box" name="button_box"> </div>
                     <field name="id" invisible="1"/>
@@ -29,12 +30,15 @@
                         </h1>
                     </div>
                     <group>
-                            <field name="company_id" invisible="1"/>
-                            <field name="company_id" placeholder="Company" groups="base.group_multi_company"/>
-                            <field name="parent_id" placeholder="Parent" domain="[('id', '!=', id),'|', ('company_id', '=', False), ('company_id', '=', company_id)]" context="{'default_company_id': company_id}"/>
-                        <notebook>
-                        </notebook>
+                        <group name="col1">
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="parent_id" domain="[('id', '!=', id),'|', ('company_id', '=', False), ('company_id', '=', company_id)]" context="{'default_company_id': company_id}"/>
+                        </group>
+                        <group name="col2">
+                        </group>
                     </group>
+                    <notebook>
+                    </notebook>
                 </sheet>
             </form>
         </field>
