@@ -3,27 +3,26 @@
 # 	* sale_multi_store
 # 
 # Translators:
-# Juan José Scarafía <scarafia.juanjose@gmail.com>, 2020
-# Juan Rivero <jr@adhoc.com.ar>, 2021
+# Juan José Scarafía <scarafia.juanjose@gmail.com>, 2022
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 13.0\n"
+"Project-Id-Version: Odoo Server 15.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-13 10:10+0000\n"
-"PO-Revision-Date: 2020-06-10 18:31+0000\n"
-"Last-Translator: Juan Rivero <jr@adhoc.com.ar>, 2021\n"
-"Language-Team: Spanish (https://www.transifex.com/adhoc/teams/46451/es/)\n"
+"POT-Creation-Date: 2022-09-13 19:16+0000\n"
+"PO-Revision-Date: 2022-08-29 15:01+0000\n"
+"Last-Translator: Juan José Scarafía <scarafia.juanjose@gmail.com>, 2022\n"
+"Language-Team: Spanish (https://www.transifex.com/adhoc/teams/133229/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Language: es\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #. module: sale_multi_store
 #: model:ir.model,name:sale_multi_store.model_sale_order
 msgid "Sales Order"
-msgstr "Orden de Venta"
+msgstr "Pedido de venta"
 
 #. module: sale_multi_store
 #: model:ir.model.fields,field_description:sale_multi_store.field_sale_order__store_id
@@ -34,10 +33,7 @@ msgstr "Sucursal"
 #. module: sale_multi_store
 #: model:ir.model.fields,help:sale_multi_store.field_sale_order__store_id
 msgid ""
-"Store used for data analysys and also users that are not of this store, can "
+"Store used for data analysis and also users that are not of this store, can "
 "only see this warehouse records but can not post or modify any record "
 "related to them."
 msgstr ""
-"Almacén utilizado para el análisis de datos y también los usuarios que no "
-"son de esta sucursal, sólo puede ver los registros de este almacén, pero no "
-"puede publicar o modificar cualquier registro relacionado con ellos."
