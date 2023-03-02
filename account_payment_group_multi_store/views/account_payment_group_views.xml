@@ -8,7 +8,7 @@
         <field name="arch" type="xml">
             <field name="company_id" position="after">
                 <!-- lo hacemos requerido por vista porque es computado (se computa luego de crear) y ademas por si al instalar algun store no se puede definir, ademas lo hacemos solo requerido en estado borrador ya que si queda algun pago validado sin este campo, dejamos que se reabra y de ultima se seleccione -->
-                <field name="store_id" groups="base_multi_store.group_multi_store" attrs="{'required': [('state', '=', 'draft')], 'readonly': [('state', '!=', 'draft')]}" options="{'no_create': True, 'no_open': True}"/>
+                <field name="store_id" domain="[('hide_on_payments', '=', False)]" invisible="context.get('pop_up')" groups="base_multi_store.group_multi_store" attrs="{'required': [('state', '=', 'draft')], 'readonly': [('state', '!=', 'draft')]}" options="{'no_create': True, 'no_open': True}"/>
             </field>
         </field>
     </record>
@@ -19,7 +19,7 @@
         <field name="inherit_id" ref="account_payment_group.view_account_payment_group_search"/>
         <field name="arch" type="xml">
             <field name="company_id" position="after">
-                <field name="store_id" groups="base_multi_store.group_multi_store"/>
+                <field name="store_id" domain="[('hide_on_payments', '=', False)]" groups="base_multi_store.group_multi_store"/>
             </field>
             <search>
                 <filter name="store" string="Store" context="{'group_by':'store_id'}" groups="base_multi_store.group_multi_store"/>
