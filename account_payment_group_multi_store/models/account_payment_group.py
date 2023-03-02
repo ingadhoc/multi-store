@@ -13,11 +13,22 @@ class AccountPaymentGroup(models.Model):
         # default=lambda self: self.env.user.store_id,
     )
 
+    @api.depends_context('to_pay_move_line_ids')
     @api.depends('payment_ids.journal_id.store_id')
     def _compute_store_id(self):
         # tal vez en este caso buscar un store padre que de alguna manera da
         # permiso para todos estos stores?
         for rec in self:
+            # agregamos esto del contexto con la misma logica que esta en payment group el metodo
+            # _refresh_payments_and_move_lines. Si viene eso en el contexto es porque venimos de una factura
+            # y las pay lines no se refrescan.
+            if self._context.get('to_pay_move_line_ids'):
+                aml_store = self.env['account.move.line'].browse(self._context.get('to_pay_move_line_ids')).mapped(
+                    'journal_id.store_id')
+                # aca habria que verificar que no se este pagando deuda de sstores diferentes, en ese caso
+                # aml_store seria > 1. Pero no siempre habria que devolver raise, porque si el store no tiene
+                # store_id.only_allow_reonciliaton_of_this_store entonces no estaria mal
+                rec.store_id = aml_store
             store = rec.payment_ids.mapped('journal_id.store_id')
             if len(store) != 1:
                 continue

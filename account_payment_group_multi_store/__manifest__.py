@@ -19,7 +19,7 @@
 ##############################################################################
 {
     'name': 'Multi Store on Payment Groups',
-    'version': '13.0.1.0.0',
+    'version': '13.0.1.1.0',
     'category': 'Accounting',
     'sequence': 14,
     'summary': '',
@@ -35,6 +35,7 @@
     ],
     'data': [
         'views/account_payment_group_views.xml',
+        'views/res_store_view.xml',
     ],
     'demo': [
     ],
