@@ -36,3 +36,8 @@ class AccountPaymentGroup(models.Model):
     @api.depends('store_id')
     def _compute_to_pay_move_lines(self):
         super()._compute_to_pay_move_lines()
+
+    def compute_withholdings(self):
+        # only compute withholdings for payment groups where the store is not disabling it
+        return super(
+            AccountPaymentGroup, self.filtered(lambda x: not x.store_id.dont_compute_withholdings)).compute_withholdings()

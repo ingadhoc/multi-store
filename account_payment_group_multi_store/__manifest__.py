@@ -32,9 +32,11 @@
         'account',
         'base_multi_store',
         'account_payment_group',
+        'account_withholding_automatic',
     ],
     'data': [
         'views/account_payment_group_views.xml',
+        'views/res_store_view.xml',
     ],
     'demo': [
     ],
