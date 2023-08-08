@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <!-- Form -->
+    <record id="view_res_store_form" model="ir.ui.view">
+        <field name="name">res.store.form</field>
+        <field name="model">res.store</field>
+        <field name="inherit_id" ref="base_multi_store.view_res_store_form"/>
+        <field name="arch" type="xml">
+            <field name="only_allow_reonciliaton_of_this_store" position="after">
+                <field name="dont_compute_withholdings"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>
