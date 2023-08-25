@@ -12,15 +12,15 @@ class AccountPaymentGroup(models.Model):
         # default=lambda self: self.env.user.store_id,
     )
 
-    @api.depends('payment_ids.journal_id.store_id')
+    @api.depends('payment_ids', 'to_pay_move_line_ids')
     def _compute_store_id(self):
         # tal vez en este caso buscar un store padre que de alguna manera da
         # permiso para todos estos stores?
-        for rec in self:
-            store = rec.payment_ids.mapped('journal_id.store_id')
-            if len(store) != 1:
-                continue
-            rec.store_id = store
+        for rec in self.filtered(lambda x: not x.store_id):
+            if not rec.payment_ids and len(rec.to_pay_move_line_ids.mapped('journal_id.store_id')) == 1:
+                rec.store_id = rec.to_pay_move_line_ids.mapped('journal_id.store_id')
+            elif len(rec.payment_ids.mapped('journal_id.store_id')) == 1:
+                rec.store_id = rec.payment_ids.mapped('journal_id.store_id')
 
     def _get_to_pay_move_lines_domain(self):
         """ Si soy pago de un payment group con store, y :

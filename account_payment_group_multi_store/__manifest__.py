@@ -39,6 +39,7 @@
         'views/res_store_view.xml',
     ],
     'demo': [
+        'demo/res_store_demo.xml',
     ],
     'installable': True,
     'auto_install': False,

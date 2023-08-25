@@ -43,6 +43,7 @@
     'demo': [
         # TODO fix demo data, perhups yml
         # 'demo/account_demo.xml',
+        'demo/res_store_demo.xml',
     ],
     'installable': True,
     'auto_install': True,
