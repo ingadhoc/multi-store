@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="unidad_a_store" model="res.store">
+        <field name="name">Unidad A</field>
+        <field name="parent_id" ref="base_multi_store.shared_store"/>
+        <field name="only_allow_reonciliaton_of_this_store" eval="True"/>
+    </record>
+
+    <record id="unidad_b_store" model="res.store">
+        <field name="name">Unidad B</field>
+        <field name="only_allow_reonciliaton_of_this_store" eval="True"/>
+        <field name="parent_id" ref="base_multi_store.shared_store"/>
+    </record>
+
+</odoo>
