@@ -12,14 +12,12 @@ class AccountPaymentGroup(models.Model):
         # default=lambda self: self.env.user.store_id,
     )
 
-    @api.depends('payment_ids', 'to_pay_move_line_ids')
+    @api.depends('payment_ids')
     def _compute_store_id(self):
         # tal vez en este caso buscar un store padre que de alguna manera da
         # permiso para todos estos stores?
         for rec in self.filtered(lambda x: not x.store_id):
-            if not rec.payment_ids and len(rec.to_pay_move_line_ids.mapped('journal_id.store_id')) == 1:
-                rec.store_id = rec.to_pay_move_line_ids.mapped('journal_id.store_id')
-            elif len(rec.payment_ids.mapped('journal_id.store_id')) == 1:
+            if len(rec.payment_ids.mapped('journal_id.store_id')) == 1:
                 rec.store_id = rec.payment_ids.mapped('journal_id.store_id')
 
     def _get_to_pay_move_lines_domain(self):
