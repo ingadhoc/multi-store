@@ -8,7 +8,7 @@
         <field name="arch" type="xml">
             <field name="company_id" position="after">
                 <!-- lo hacemos requerido por vista porque es computado (se computa luego de crear) y ademas por si al instalar algun store no se puede definir, ademas lo hacemos solo requerido en estado borrador ya que si queda algun pago validado sin este campo, dejamos que se reabra y de ultima se seleccione -->
-                <field name="store_id" groups="base_multi_store.group_multi_store" attrs="{'required': [('state', '=', 'draft')], 'readonly': ['|', ('state', '!=', 'draft'), ('payment_ids', '!=', [])]}" options="{'no_create': True, 'no_open': True}"/>
+                <field name="store_id" groups="base_multi_store.group_multi_store" attrs="{'required': [('state', '=', 'draft')], 'readonly': ['|', ('state', '!=', 'draft'), ('payment_ids', '!=', [])]}" options="{'no_create': True, 'no_open': True}" invisible="context.get('pop_up')"/>
             </field>
         </field>
     </record>
