@@ -6,10 +6,7 @@ class AccountPaymentGroup(models.Model):
 
     store_id = fields.Many2one(
         'res.store',
-        compute='_compute_store_id',
         readonly=False,
-        store=True,
-        # default=lambda self: self.env.user.store_id,
     )
 
     @api.model_create_multi
