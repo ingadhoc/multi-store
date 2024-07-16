@@ -41,7 +41,7 @@ class ResStore(models.Model):
     )
 
     _sql_constraints = [
-        ('name_uniq', 'unique (name, company_id)',
+        ('name_uniq', 'unique(name, company_id)',
             'The store name must be unique per company!')
     ]
 

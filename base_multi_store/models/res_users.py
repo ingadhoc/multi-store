@@ -61,7 +61,7 @@ class ResUsers(models.Model):
         res = super().write(values)
         # clear cache rules when store changes
         if 'store_id' in values:
-            self.env['ir.rule'].clear_caches()
+            self.env.registry.clear_cache()
         group_multi_store = self.env.ref(
             'base_multi_store.group_multi_store', False)
         if group_multi_store and 'store_ids' in values:
