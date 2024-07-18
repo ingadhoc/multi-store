@@ -19,7 +19,7 @@
 ##############################################################################
 {
     'name': 'Multi Store for Accounting',
-    'version': "16.0.1.1.0",
+    'version': "17.0.1.1.0",
     'category': 'Accounting',
     'sequence': 14,
     'summary': '',
@@ -45,7 +45,7 @@
         # 'demo/account_demo.xml',
         'demo/res_store_demo.xml',
     ],
-    'installable': False,
+    'installable': True,
     'auto_install': True,
     'application': False,
 }

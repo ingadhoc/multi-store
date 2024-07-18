@@ -13,4 +13,10 @@
         <field name="parent_id" ref="base_multi_store.shared_store"/>
     </record>
 
+    <record id="account_multi_store.unidad_b_store" model="res.store">
+        <field name="dont_compute_withholdings" eval="True"/>
+    </record>
+
+    <function model="res.store" name="_init_payment_group_multi_store_demo"/>
+
 </odoo>
