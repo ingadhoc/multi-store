@@ -17,7 +17,7 @@ class AccountJournal(models.Model):
     )
 
     @api.model
-    def _search(self, args, offset=0, limit=None, order=None, count=False, access_rights_uid=None):
+    def _search(self, args, offset=0, limit=None, order=None, access_rights_uid=None):
         """
         Para que los usuarios no puedan elegir diarios donde no puedan
         escribir, modificamos la funcion search. No lo hacemos por regla de
@@ -28,4 +28,4 @@ class AccountJournal(models.Model):
         # if superadmin, do not apply
         if not self.env.is_superuser():
             args += ['|', ('store_id', '=', False), ('store_id', 'child_of', [user.store_id.id])]
-        return super()._search(args, offset, limit, order, count=count, access_rights_uid=access_rights_uid)
+        return super()._search(args, offset, limit, order, access_rights_uid=access_rights_uid)
