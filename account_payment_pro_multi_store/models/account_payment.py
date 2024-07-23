@@ -1,17 +1,12 @@
-from odoo import models, fields, api
+from odoo import models, api
 
 
-class AccountPaymentGroup(models.Model):
-    _inherit = 'account.payment.group'
-
-    store_id = fields.Many2one(
-        'res.store',
-        readonly=False,
-    )
+class AccountPayment(models.Model):
+    _inherit = 'account.payment'
 
     @api.model_create_multi
     def create(self, vals_list):
-        """ Heredamos el create por si algun codigo de ecommerce o similra crea payemtns y payments groups
+        """ Heredamos el create por si algun codigo de ecommerce o similar crea payments
         sin store y para intentar dejarlo asignado.
         Tal vez en vez de ser en el create podria ser en un action_post?
         Anteriormente estabamos conviriendo store_id a computado almacenado, pero había una suerte de recursividad
@@ -19,11 +14,14 @@ class AccountPaymentGroup(models.Model):
         pero al querer agregar un pago nos recalculaba toda la deuda)
         La realidad es que si esto nos trae problemas podríamos ignorar y ni siquiera computar este dato"""
         recs = super().create(vals_list)
+        # for rec in recs.filtered(lambda x: not x.store_id):
+        #     if len(rec.payment_ids.mapped('journal_id.store_id')) == 1:
+        #         rec.store_id = rec.payment_ids.mapped('journal_id.store_id').id
+        #     elif len(rec.to_pay_move_line_ids.mapped('journal_id.store_id')) == 1:
+        #         rec.store_id = rec.to_pay_move_line_ids.mapped('journal_id.store_id').id
         for rec in recs.filtered(lambda x: not x.store_id):
-            if len(rec.payment_ids.mapped('journal_id.store_id')) == 1:
+            if rec.journal_id.store_id:
                 rec.store_id = rec.payment_ids.mapped('journal_id.store_id').id
-            elif len(rec.to_pay_move_line_ids.mapped('journal_id.store_id')) == 1:
-                rec.store_id = rec.to_pay_move_line_ids.mapped('journal_id.store_id').id
         return recs
 
     def _get_to_pay_move_lines_domain(self):
@@ -37,6 +35,7 @@ class AccountPaymentGroup(models.Model):
             res += ['|', ('store_id', '=', False), ('store_id.only_allow_reonciliaton_of_this_store', '=', False)]
         return res
 
+    #Funcion account_payment_pro
     @api.depends('store_id')
     def _compute_to_pay_move_lines(self):
         if self._context.get('default_to_pay_move_line_ids'):
@@ -46,4 +45,14 @@ class AccountPaymentGroup(models.Model):
     def compute_withholdings(self):
         # only compute withholdings for payment groups where the store is not disabling it
         return super(
-            AccountPaymentGroup, self.filtered(lambda x: not x.store_id.dont_compute_withholdings)).compute_withholdings()
+            AccountPayment, self.filtered(lambda x: not x.store_id.dont_compute_withholdings)).compute_withholdings()
+
+    def _compute_available_journal_ids(self):
+        super()._compute_available_journal_ids()
+        for rec in self:
+            if rec.store_id.only_allow_reonciliaton_of_this_store:
+                rec.available_journal_ids = rec.available_journal_ids.filtered(
+                    lambda x: x.store_id == rec.store_id)
+            elif rec.store_id:
+                rec.available_journal_ids = rec.available_journal_ids.filtered(
+                    lambda x: not x.store_id.only_allow_reonciliaton_of_this_store)
