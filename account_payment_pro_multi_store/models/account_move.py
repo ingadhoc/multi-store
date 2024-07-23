@@ -7,8 +7,8 @@ from odoo import models
 class AccountMove(models.Model):
     _inherit = "account.move"
 
-    def action_register_payment_group(self):
-        action = super().action_register_payment_group()
+    def action_register_payment(self):
+        action = super().action_register_payment()
         to_pay_move_lines = self.open_move_line_ids
         if len(to_pay_move_lines.mapped('journal_id.store_id')) == 1:
             action['context']['default_store_id'] = to_pay_move_lines.mapped('journal_id.store_id').id

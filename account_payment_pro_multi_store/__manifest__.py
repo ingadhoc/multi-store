@@ -18,8 +18,8 @@
 #
 ##############################################################################
 {
-    'name': 'Multi Store on Payment Groups',
-    'version': '16.0.1.1.0',
+    'name': 'Payment Pro Multi Stores',
+    'version': '17.0.1.1.0',
     'category': 'Accounting',
     'sequence': 14,
     'summary': '',
@@ -31,17 +31,16 @@
     'depends': [
         'account',
         'base_multi_store',
-        'account_payment_group',
-        'account_withholding_automatic',
+        'account_multi_store',
+        'account_payment_pro'
     ],
     'data': [
-        'views/account_payment_group_views.xml',
-        'views/res_store_view.xml',
+        'views/account_payment_views.xml'
     ],
     'demo': [
         'demo/res_store_demo.xml',
     ],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
     'application': False,
 }

@@ -11,7 +11,7 @@
    :alt: License: AGPL-3
 
 ==============================
-Multi Stores on Payment Groups
+Payment Pro Multi Stores
 ==============================
 
 Add stores on payment group to:
