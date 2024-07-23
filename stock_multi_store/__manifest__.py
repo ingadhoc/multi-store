@@ -19,7 +19,7 @@
 ##############################################################################
 {
     'name': 'Multi Store for Warehouse',
-    'version': "16.0.1.0.0",
+    'version': "17.0.1.0.0",
     'category': 'Accounting',
     'sequence': 14,
     'summary': '',
@@ -44,7 +44,7 @@
     ],
     'test': [
     ],
-    'installable': False,
+    'installable': True,
     'auto_install': True,
     'application': False,
 }
