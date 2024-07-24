@@ -14,11 +14,6 @@ class AccountPayment(models.Model):
         pero al querer agregar un pago nos recalculaba toda la deuda)
         La realidad es que si esto nos trae problemas podríamos ignorar y ni siquiera computar este dato"""
         recs = super().create(vals_list)
-        # for rec in recs.filtered(lambda x: not x.store_id):
-        #     if len(rec.payment_ids.mapped('journal_id.store_id')) == 1:
-        #         rec.store_id = rec.payment_ids.mapped('journal_id.store_id').id
-        #     elif len(rec.to_pay_move_line_ids.mapped('journal_id.store_id')) == 1:
-        #         rec.store_id = rec.to_pay_move_line_ids.mapped('journal_id.store_id').id
         for rec in recs.filtered(lambda x: not x.store_id):
             if rec.journal_id.store_id:
                 rec.store_id = rec.payment_ids.mapped('journal_id.store_id').id

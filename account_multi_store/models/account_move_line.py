@@ -24,10 +24,10 @@ class AccountMoveLine(models.Model):
                     'For store "%s" you can only reconcile lines of same store') % (line.store_id.display_name))
         return super().reconcile()
 
-    def _prepare_exchange_difference_move_vals(self, amounts_list, company=None, exchange_date=None):
+    def _prepare_exchange_difference_move_vals(self, amounts_list, company=None, exchange_date=None, **kwargs):
         """ Ajustamos para usar diario de diferencia de cambio seteado en los stores
         """
-        vals = super()._prepare_exchange_difference_move_vals(amounts_list, company=company, exchange_date=exchange_date)
+        vals = super()._prepare_exchange_difference_move_vals(amounts_list, company=company, exchange_date=exchange_date, **kwargs)
         company = self.company_id or company
         if not company:
             return

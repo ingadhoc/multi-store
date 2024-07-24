@@ -18,7 +18,6 @@
             </div>
             <group name="col2">
                 <field name="only_allow_reonciliaton_of_this_store"/>
-                <field name="dont_compute_withholdings"/>
                 <field name="currency_exchange_journal_id" domain="[('type', '=', 'general'), ('store_id', 'in', [id, False])]" required="only_allow_reonciliaton_of_this_store == True"/>
             </group>
             <notebook>
