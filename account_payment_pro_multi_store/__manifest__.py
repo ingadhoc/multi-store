@@ -29,13 +29,12 @@
     'images': [
     ],
     'depends': [
-        'account',
-        'base_multi_store',
         'account_multi_store',
         'account_payment_pro'
     ],
     'data': [
-        'views/account_payment_views.xml'
+        'views/account_payment_views.xml',
+        'views/res_store_views.xml'
     ],
     'demo': [
         'demo/res_store_demo.xml',
