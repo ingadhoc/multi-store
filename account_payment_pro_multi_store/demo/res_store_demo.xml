@@ -6,5 +6,5 @@
     </record>
 
     <function model="res.store" name="_init_payment_group_multi_store_demo"/>
-    
+
 </odoo>

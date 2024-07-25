@@ -10,19 +10,13 @@
    :target: https://www.gnu.org/licenses/agpl
    :alt: License: AGPL-3
 
-==============================
+========================
 Payment Pro Multi Stores
-==============================
+========================
 
-Add stores on payment group to:
-* Compute debt only of that store
-* Filter journal on payments for that store
-* If payment groups are created from somewhere else the store_id will be computed from payment if all the payments are from same store (no restrictions for now)
-
-May be on the future we can also add integration to receiptbooks
-
-TODO: por el momento no está mejorado que al querer agregar apuntes contables se filtre tmb por ese dominio porque requiere re-escribir el dominio de to_pay_move_line_ids, tal vez en v16+ podamos cambiar y que ese dominio venga definido por un campo calculado o algo mas heredable
-
+If the stores use the setting "only_allow_reonciliaton_of_this_store", on payments
+* Compute debt only of the store of the journal
+* When creating payment from debt (for eg. invoice), if all the debt is from same store, filter journals for that store
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
