@@ -33,7 +33,6 @@
         'account_payment_pro'
     ],
     'data': [
-        'views/account_payment_views.xml',
         'views/res_store_views.xml'
     ],
     'demo': [

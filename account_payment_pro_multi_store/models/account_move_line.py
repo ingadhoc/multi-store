@@ -9,7 +9,8 @@ class AccountMoveLine(models.Model):
 
     def action_register_payment(self):
         action = super().action_register_payment()
-        # si todas las lineas que estoy pagando son del mismo store, mandamos el store al payment
+        # si todas las lineas que estoy pagando son del mismo store, mandamos el store al payment para que
+        # solo deje pagar con diarios de ese store
         if len(self.mapped('journal_id.store_id')) == 1:
-            action['context']['default_store_id'] = self.mapped('journal_id.store_id').id
+            action['context']['restrict_store_id'] = self.mapped('journal_id.store_id').id
         return action
