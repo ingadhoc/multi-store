@@ -45,7 +45,7 @@
         # 'demo/account_demo.xml',
         'demo/res_store_demo.xml',
     ],
-    'installable': True,
+    'installable': False,
     'auto_install': True,
     'application': False,
 }

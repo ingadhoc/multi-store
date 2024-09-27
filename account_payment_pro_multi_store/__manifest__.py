@@ -38,7 +38,7 @@
     'demo': [
         'demo/res_store_demo.xml',
     ],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     'application': False,
 }
