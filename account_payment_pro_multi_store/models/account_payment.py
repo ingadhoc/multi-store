@@ -11,6 +11,8 @@ class AccountPayment(models.Model):
         res = super()._get_to_pay_move_lines_domain()
         if self.store_id.only_allow_reonciliaton_of_this_store:
             res += [('store_id', '=', self.store_id.id)]
+            if self.partner_id.commercial_partner_id.id:
+                self.with_context(restrict_store_id=self.store_id.id)._compute_available_journal_ids()
         elif self.store_id:
             res += ['|', ('store_id', '=', False), ('store_id.only_allow_reonciliaton_of_this_store', '=', False)]
         return res
