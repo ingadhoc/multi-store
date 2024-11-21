@@ -48,7 +48,7 @@ class ResStore(models.Model):
     @api.constrains('parent_id')
     def _check_parent_id(self):
         for rec in self:
-            if not rec._check_recursion():
+            if rec._has_cycle():
                 raise ValidationError(
                     _('Error! You can not create recursive stores.'))
 
