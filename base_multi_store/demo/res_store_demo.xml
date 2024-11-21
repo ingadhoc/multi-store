@@ -8,13 +8,11 @@
 
     <record id="rosario_store" model="res.store">
         <field name="name">Rosario</field>
-        <field name="parent_id" ref="main_company_stores"/>
         <field name="company_id" ref="base.main_company"/>
     </record>
 
     <record id="buenos_aires_store" model="res.store">
         <field name="name">Buenos Aires</field>
-        <field name="parent_id" ref="main_company_stores"/>
         <field name="company_id" ref="base.main_company"/>
     </record>
 
