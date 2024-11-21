@@ -23,7 +23,7 @@ Related Linked Models:
 * Locations (TODO)
 * Quants (TODO)
 * Stock Move (TODO)
-* Pickings
+* Pickings.
 * Picking Types
 
 Installation

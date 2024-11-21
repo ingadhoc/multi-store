@@ -12,7 +12,7 @@
                     class="oe_inline oe_stat_button"
                     name="%(stock.action_warehouse_form)d"
                     type="action"
-                    context="{'search_default_store_id': active_id}"
+                    context="{'search_default_store_id': id}"
                     icon="fa-home">
                     <field name="warehouses_count" widget="statinfo"/>
                 </button>
