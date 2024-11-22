@@ -11,7 +11,7 @@
                     class="oe_inline oe_stat_button"
                     name="%(account.action_account_journal_form)d"
                     type="action"
-                    context="{'search_default_store_id': active_id}"
+                    context="{'search_default_store_id': id}"
                     icon="fa-money">
                     <field name="journals_count" widget="statinfo"/>
                 </button>
