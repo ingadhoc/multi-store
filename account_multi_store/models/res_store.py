@@ -32,6 +32,6 @@ class ResStore(models.Model):
     def _check_currency_exchange_journal_id(self):
         for rec in self.filtered('currency_exchange_journal_id'):
             if not rec.currency_exchange_journal_id.store_id:
-                rec.currency_exchange_journal_id.store_id = rec.id
-            elif rec.currency_exchange_journal_id.store_id != rec.id:
+                rec.currency_exchange_journal_id.store_id = rec
+            elif rec.currency_exchange_journal_id.store_id.id != rec.id:
                 raise UserError('El diario de diferencia de cambio debe ser de esta misma sucursal')
