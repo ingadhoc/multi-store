@@ -42,3 +42,13 @@ class AccountMoveLine(models.Model):
             vals['move_vals']['journal_id'] = currency_exchange_journal.id
 
         return vals
+
+    def action_register_payment(self):
+        action = super().action_register_payment()
+        return self._apply_store_logic(action)
+
+    def _apply_store_logic(self, action):
+        """Lógica específica del store que puede ser reutilizada."""
+        if len(self.mapped('journal_id.store_id')) == 1:
+            action['context']['restrict_store_id'] = self.mapped('journal_id.store_id').id
+        return action
