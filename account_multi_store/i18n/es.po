@@ -3,21 +3,39 @@
 # 	* account_multi_store
 # 
 # Translators:
-# Juan José Scarafía <scarafia.juanjose@gmail.com>, 2020
+# Juan José Scarafía <scarafia.juanjose@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 13.0\n"
+"Project-Id-Version: Odoo Server 17.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-12 22:51+0000\n"
-"PO-Revision-Date: 2020-06-10 18:31+0000\n"
-"Last-Translator: Juan José Scarafía <scarafia.juanjose@gmail.com>, 2020\n"
-"Language-Team: Spanish (https://www.transifex.com/adhoc/teams/46451/es/)\n"
+"POT-Creation-Date: 2024-12-27 17:31+0000\n"
+"PO-Revision-Date: 2024-12-27 17:31+0000\n"
+"Last-Translator: Juan José Scarafía <scarafia.juanjose@gmail.com>, 2024\n"
+"Language-Team: Spanish (https://app.transifex.com/adhoc/teams/46451/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Language: es\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+
+#. module: account_multi_store
+#: model:ir.model.fields,field_description:account_multi_store.field_res_store__currency_exchange_journal_id
+msgid "Currency Exchange Journal"
+msgstr ""
+
+#. module: account_multi_store
+#. odoo-python
+#: code:addons/account_multi_store/models/account_move_line.py:0
+#, python-format
+msgid "For store \"%s\" you can only reconcile lines of same store"
+msgstr ""
+
+#. module: account_multi_store
+#: model:ir.model.fields,help:account_multi_store.field_res_store__only_allow_reonciliaton_of_this_store
+msgid ""
+"If enable, debt reconciliation will be only doable on items of this store"
+msgstr ""
 
 #. module: account_multi_store
 #: model:ir.model,name:account_multi_store.model_account_journal
@@ -26,13 +44,13 @@ msgstr "Diario"
 
 #. module: account_multi_store
 #: model:ir.model,name:account_multi_store.model_account_move
-msgid "Journal Entries"
-msgstr "Entradas de Diario"
+msgid "Journal Entry"
+msgstr "Asiento contable"
 
 #. module: account_multi_store
 #: model:ir.model,name:account_multi_store.model_account_move_line
 msgid "Journal Item"
-msgstr "Apunte Contable"
+msgstr "Apunte contable"
 
 #. module: account_multi_store
 #: model:ir.model.fields,field_description:account_multi_store.field_res_store__journal_ids
@@ -46,12 +64,17 @@ msgid "Journals Count"
 msgstr "Recuento de Diarios"
 
 #. module: account_multi_store
+#: model:ir.model.fields,field_description:account_multi_store.field_res_store__only_allow_reonciliaton_of_this_store
+msgid "Only Allow Reonciliaton Of This Store"
+msgstr ""
+
+#. module: account_multi_store
 #: model:ir.model,name:account_multi_store.model_account_payment
 msgid "Payments"
 msgstr "Pagos"
 
 #. module: account_multi_store
-#: model:ir.model.fields,field_description:account_multi_store.field_account_bank_statement_import_journal_creation__store_id
+#: model:ir.model.fields,field_description:account_multi_store.field_account_bank_statement_line__store_id
 #: model:ir.model.fields,field_description:account_multi_store.field_account_journal__store_id
 #: model:ir.model.fields,field_description:account_multi_store.field_account_move__store_id
 #: model:ir.model.fields,field_description:account_multi_store.field_account_move_line__store_id
@@ -65,7 +88,7 @@ msgid "Store"
 msgstr "Sucursal"
 
 #. module: account_multi_store
-#: model:ir.model.fields,help:account_multi_store.field_account_bank_statement_import_journal_creation__store_id
+#: model:ir.model.fields,help:account_multi_store.field_account_bank_statement_line__store_id
 #: model:ir.model.fields,help:account_multi_store.field_account_journal__store_id
 #: model:ir.model.fields,help:account_multi_store.field_account_move__store_id
 #: model:ir.model.fields,help:account_multi_store.field_account_move_line__store_id
