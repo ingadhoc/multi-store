@@ -7,8 +7,8 @@ from odoo import models
 class AccountMoveLine(models.Model):
     _inherit = "account.move.line"
 
-    def action_register_payment(self):
-        action = super().action_register_payment()
+    def action_register_payment(self, ctx=None):
+        action = super().action_register_payment(ctx=ctx)
         # si todas las lineas que estoy pagando son del mismo store, mandamos el store al payment para que
         # solo deje pagar con diarios de ese store
         if len(self.mapped('journal_id.store_id')) == 1:
