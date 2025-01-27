@@ -17,7 +17,6 @@ class ResStore(models.Model):
 
     journals_count = fields.Integer(
         compute='_compute_journals_count',
-        string='Journals Count',
     )
     currency_exchange_journal_id = fields.Many2one('account.journal')
     only_allow_reonciliaton_of_this_store = fields.Boolean(
