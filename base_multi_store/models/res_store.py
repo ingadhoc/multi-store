@@ -64,5 +64,5 @@ class ResStore(models.Model):
             stores = self.env.user.store_id + self.env.user.store_ids
             args = (args or []) + [('id', 'in', stores.ids)]
             newself = newself.sudo()
-        return super(ResStore, newself.with_context(context)).name_search(
+        return super(ResStore, newself.with_context(**context)).name_search(
             name=name, args=args, operator=operator, limit=limit)
