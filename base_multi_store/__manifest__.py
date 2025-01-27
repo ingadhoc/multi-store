@@ -18,29 +18,28 @@
 #
 ##############################################################################
 {
-    'name': 'Multi Stores Management',
-    'version': "18.0.1.0.0",
-    'category': 'Accounting',
-    'sequence': 14,
-    'summary': '',
-    'author': 'ADHOC SA',
-    'website': 'www.adhoc.com.ar',
-    'license': 'AGPL-3',
-    'images': [
+    "name": "Multi Stores Management",
+    "version": "18.0.1.0.0",
+    "category": "Accounting",
+    "sequence": 14,
+    "summary": "",
+    "author": "ADHOC SA",
+    "website": "www.adhoc.com.ar",
+    "license": "AGPL-3",
+    "images": [],
+    "depends": [
+        "base",
     ],
-    'depends': [
-        'base',
+    "data": [
+        "security/ir.model.access.csv",
+        "security/multi_store_security.xml",
+        "views/res_store_view.xml",
+        "views/res_users_view.xml",
     ],
-    'data': [
-        'security/ir.model.access.csv',
-        'security/multi_store_security.xml',
-        'views/res_store_view.xml',
-        'views/res_users_view.xml',
+    "demo": [
+        "demo/res_store_demo.xml",
     ],
-    'demo': [
-        'demo/res_store_demo.xml',
-    ],
-    'installable': True,
-    'auto_install': False,
-    'application': True,
+    "installable": True,
+    "auto_install": False,
+    "application": True,
 }

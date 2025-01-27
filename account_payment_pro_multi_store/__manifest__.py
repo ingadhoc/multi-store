@@ -18,27 +18,21 @@
 #
 ##############################################################################
 {
-    'name': 'Payment Pro Multi Stores',
-    'version': "18.0.1.0.0",
-    'category': 'Accounting',
-    'sequence': 14,
-    'summary': '',
-    'author': 'ADHOC SA',
-    'website': 'www.adhoc.com.ar',
-    'license': 'AGPL-3',
-    'images': [
+    "name": "Payment Pro Multi Stores",
+    "version": "18.0.1.0.0",
+    "category": "Accounting",
+    "sequence": 14,
+    "summary": "",
+    "author": "ADHOC SA",
+    "website": "www.adhoc.com.ar",
+    "license": "AGPL-3",
+    "images": [],
+    "depends": ["account_multi_store", "account_payment_pro"],
+    "data": ["views/res_store_views.xml"],
+    "demo": [
+        "demo/res_store_demo.xml",
     ],
-    'depends': [
-        'account_multi_store',
-        'account_payment_pro'
-    ],
-    'data': [
-        'views/res_store_views.xml'
-    ],
-    'demo': [
-        'demo/res_store_demo.xml',
-    ],
-    'installable': True,
-    'auto_install': False,
-    'application': False,
+    "installable": True,
+    "auto_install": False,
+    "application": False,
 }

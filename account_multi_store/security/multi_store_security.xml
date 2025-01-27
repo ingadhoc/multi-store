@@ -24,4 +24,3 @@
         <field name="domain_force">['|',('journal_id.store_id','=',False),('journal_id.store_id','child_of',[user.store_id.id])]</field>
     </record>
 </odoo>
-

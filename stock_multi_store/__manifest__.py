@@ -18,33 +18,31 @@
 #
 ##############################################################################
 {
-    'name': 'Multi Store for Warehouse',
-    'version': "18.0.1.0.0",
-    'category': 'Accounting',
-    'sequence': 14,
-    'summary': '',
-    'author': 'ADHOC SA',
-    'website': 'www.adhoc.com.ar',
-    'license': 'AGPL-3',
-    'images': [
+    "name": "Multi Store for Warehouse",
+    "version": "18.0.1.0.0",
+    "category": "Accounting",
+    "sequence": 14,
+    "summary": "",
+    "author": "ADHOC SA",
+    "website": "www.adhoc.com.ar",
+    "license": "AGPL-3",
+    "images": [],
+    "depends": [
+        "stock",
+        "base_multi_store",
     ],
-    'depends': [
-        'stock',
-        'base_multi_store',
+    "data": [
+        "views/stock_picking_type_view.xml",
+        "views/stock_picking_view.xml",
+        "views/stock_warehouse_view.xml",
+        "views/res_store_view.xml",
+        "security/multi_store_security.xml",
     ],
-    'data': [
-        'views/stock_picking_type_view.xml',
-        'views/stock_picking_view.xml',
-        'views/stock_warehouse_view.xml',
-        'views/res_store_view.xml',
-        'security/multi_store_security.xml',
+    "demo": [
+        "demo/stock_demo.xml",
     ],
-    'demo': [
-        'demo/stock_demo.xml',
-    ],
-    'test': [
-    ],
-    'installable': True,
-    'auto_install': True,
-    'application': False,
+    "test": [],
+    "installable": True,
+    "auto_install": True,
+    "application": False,
 }
