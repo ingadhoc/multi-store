@@ -2,19 +2,19 @@
 # For copyright and license notices, see __manifest__.py file in module root
 # directory
 ##############################################################################
-from odoo import models, fields, api
+from odoo import api, fields, models
 
 
 class StockPickingType(models.Model):
-    _inherit = 'stock.picking.type'
+    _inherit = "stock.picking.type"
 
     store_id = fields.Many2one(
-        related='warehouse_id.store_id',
+        related="warehouse_id.store_id",
         store=True,
     )
 
     def write(self, vals):
-        if 'active' in vals and self.mapped('store_id'):
+        if "active" in vals and self.mapped("store_id"):
             self = self.with_context(active_test=False)
         return super().write(vals)
 
@@ -29,5 +29,5 @@ class StockPickingType(models.Model):
         user = self.env.user
         # if superadmin, do not apply
         if not self.env.is_superuser():
-            args += ['|', ('store_id', '=', False), ('store_id', 'child_of', [user.store_id.id])]
+            args += ["|", ("store_id", "=", False), ("store_id", "child_of", [user.store_id.id])]
         return super()._search(args, offset, limit, order)

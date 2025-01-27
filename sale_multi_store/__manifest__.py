@@ -18,27 +18,25 @@
 #
 ##############################################################################
 {
-    'name': 'Multi Store for Sale',
-    'version': "18.0.1.0.0",
-    'category': 'Accounting',
-    'sequence': 14,
-    'summary': '',
-    'author': 'ADHOC SA',
-    'website': 'www.adhoc.com.ar',
-    'license': 'AGPL-3',
-    'images': [
+    "name": "Multi Store for Sale",
+    "version": "18.0.1.0.0",
+    "category": "Accounting",
+    "sequence": 14,
+    "summary": "",
+    "author": "ADHOC SA",
+    "website": "www.adhoc.com.ar",
+    "license": "AGPL-3",
+    "images": [],
+    "depends": [
+        "sale_stock",
+        "stock_multi_store",
     ],
-    'depends': [
-        'sale_stock',
-        'stock_multi_store',
+    "data": [
+        "views/sale_order_view.xml",
+        "security/multi_store_security.xml",
     ],
-    'data': [
-        'views/sale_order_view.xml',
-        'security/multi_store_security.xml',
-    ],
-    'demo': [
-    ],
-    'installable': True,
-    'auto_install': True,
-    'application': False,
+    "demo": [],
+    "installable": True,
+    "auto_install": True,
+    "application": False,
 }

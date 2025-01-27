@@ -18,34 +18,33 @@
 #
 ##############################################################################
 {
-    'name': 'Multi Store for Accounting',
-    'version': "18.0.1.1.0",
-    'category': 'Accounting',
-    'sequence': 14,
-    'summary': '',
-    'author': 'ADHOC SA',
-    'website': 'www.adhoc.com.ar',
-    'license': 'AGPL-3',
-    'images': [
+    "name": "Multi Store for Accounting",
+    "version": "18.0.1.1.0",
+    "category": "Accounting",
+    "sequence": 14,
+    "summary": "",
+    "author": "ADHOC SA",
+    "website": "www.adhoc.com.ar",
+    "license": "AGPL-3",
+    "images": [],
+    "depends": [
+        "account",
+        "base_multi_store",
     ],
-    'depends': [
-        'account',
-        'base_multi_store',
+    "data": [
+        "views/account_journal_views.xml",
+        "views/account_move_line_views.xml",
+        "views/account_move_views.xml",
+        "views/account_payment_views.xml",
+        "views/res_store_views.xml",
+        "security/multi_store_security.xml",
     ],
-    'data': [
-        'views/account_journal_views.xml',
-        'views/account_move_line_views.xml',
-        'views/account_move_views.xml',
-        'views/account_payment_views.xml',
-        'views/res_store_views.xml',
-        'security/multi_store_security.xml',
-    ],
-    'demo': [
+    "demo": [
         # TODO fix demo data, perhups yml
         # 'demo/account_demo.xml',
-        'demo/res_store_demo.xml',
+        "demo/res_store_demo.xml",
     ],
-    'installable': True,
-    'auto_install': True,
-    'application': False,
+    "installable": True,
+    "auto_install": True,
+    "application": False,
 }
