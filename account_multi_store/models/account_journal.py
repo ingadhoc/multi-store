@@ -28,4 +28,4 @@ class AccountJournal(models.Model):
         # if superadmin, do not apply
         if not self.env.is_superuser():
             args += ['|', ('store_id', '=', False), ('store_id', 'child_of', user.store_ids.ids)]
-        return super()._search(args, offset, limit, order, access_rights_uid=access_rights_uid)
+        return super(AccountJournal, self.with_context(active_test=False))._search(args, offset, limit, order, access_rights_uid=access_rights_uid)
