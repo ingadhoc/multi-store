@@ -28,7 +28,7 @@ class AccountJournal(models.Model):
         # if superadmin, do not apply
         if not self.env.is_superuser():
             domain += ["|", ("store_id", "=", False), ("store_id", "child_of", user.store_ids.ids)]
-        return super()._search(domain, offset, limit, order)
+        return super(AccountJournal, self.with_context(active_test=False))._search(domain, offset, limit, order)
 
     @api.model
     @api.readonly
