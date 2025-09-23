@@ -6,3 +6,5 @@ from . import res_store
 from . import stock_picking_type
 from . import stock_picking
 from . import stock_warehouse
+from . import stock_rule
+from . import stock_orderpoint
