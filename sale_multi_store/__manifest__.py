@@ -36,7 +36,7 @@
         "security/multi_store_security.xml",
     ],
     "demo": [],
-    "installable": True,
+    'installable': False,
     "auto_install": True,
     "application": False,
 }
