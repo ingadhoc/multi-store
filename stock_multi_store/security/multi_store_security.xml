@@ -25,13 +25,4 @@
         <field name="perm_read" eval="False"/>
         <field name="domain_force">['|', ('picking_type_id.code','=','dropship'),'|',('picking_type_id.warehouse_id.store_id','=',False),('picking_type_id.warehouse_id.store_id','child_of',[user.store_id.id])]</field>
     </record>
-
-    <record id="stock_rule_rule" model="ir.rule">
-        <field name="name">Stock Rule multi-store</field>
-        <field name="model_id" ref="stock.model_stock_rule"/>
-        <field name="global" eval="True"/>
-        <field name="perm_read" eval="False"/>
-        <field name="domain_force">['|',('warehouse_id.store_id','=',False),('warehouse_id.store_id','child_of',[user.store_id.id])]</field>
-    </record>
-
 </odoo>
