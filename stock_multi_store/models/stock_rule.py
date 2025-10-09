@@ -18,7 +18,8 @@ class StockRule(models.Model):
         """
         user = self.env.user
         # if superadmin, do not apply
-        if not self.with_user(user.id).env.is_superuser():
+        # El contexto search_default_filter_not_snoozed se agrega para ver sale order points que era donde fallaba
+        if not self.env.is_superuser() and self.env.context.get("search_default_filter_not_snoozed"):
             args += [
                 "|",
                 ("warehouse_id.store_id", "=", False),
