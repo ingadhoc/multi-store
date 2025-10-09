@@ -3,15 +3,15 @@
 # 	* stock_multi_store
 # 
 # Translators:
-# Juan José Scarafía <scarafia.juanjose@gmail.com>, 2024
+# Juan José Scarafía <scarafia.juanjose@gmail.com>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-03 04:57+0000\n"
+"POT-Creation-Date: 2025-10-09 16:53+0000\n"
 "PO-Revision-Date: 2024-12-06 17:21+0000\n"
-"Last-Translator: Juan José Scarafía <scarafia.juanjose@gmail.com>, 2024\n"
+"Last-Translator: Juan José Scarafía <scarafia.juanjose@gmail.com>, 2025\n"
 "Language-Team: Spanish (https://app.transifex.com/adhoc/teams/46451/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,9 +20,19 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #. module: stock_multi_store
+#: model:ir.model,name:stock_multi_store.model_stock_warehouse_orderpoint
+msgid "Minimum Inventory Rule"
+msgstr "Regla de inventario mínimo"
+
+#. module: stock_multi_store
 #: model:ir.model,name:stock_multi_store.model_stock_picking_type
 msgid "Picking Type"
 msgstr "Tipo de albarán"
+
+#. module: stock_multi_store
+#: model:ir.model,name:stock_multi_store.model_stock_rule
+msgid "Stock Rule"
+msgstr "Regla de inventario"
 
 #. module: stock_multi_store
 #: model:ir.model.fields,field_description:stock_multi_store.field_stock_picking__store_id
