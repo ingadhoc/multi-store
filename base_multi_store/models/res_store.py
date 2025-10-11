@@ -41,16 +41,19 @@ class ResStore(models.Model):
 
     @api.model
     def name_search(self, name="", args=None, operator="ilike", limit=100):
-        context = dict(self._context or {})
-        newself = self
+        # usa env.context (más moderno) y asegura lista para args
+        context = dict(self.env.context or {})
+        args = list(args or [])
+        new_self = self
+
         if context.pop("user_preference", None):
-            # We browse as superuser. Otherwise, the user would be able to
-            # select only the currently visible stores (according to rules,
-            # which are probably to allow to see the child stores) even if
-            # she belongs to some other stores.
+            # browse as superuser so the user can see all allowed stores
             stores = self.env.user.store_id + self.env.user.store_ids
-            args = (args or []) + [("id", "in", stores.ids)]
-            newself = newself.sudo()
-        return super(ResStore, newself.with_context(**context)).name_search(
-            name=name, args=args, operator=operator, limit=limit
-        )
+            args += [("id", "in", stores.ids)]
+            new_self = new_self.sudo()
+
+        # aplica el contexto modificado antes de llamar al super
+        new_self = new_self.with_context(**context)
+
+        # Llamada por posición (no keywords) — evita el TypeError
+        return super(ResStore, new_self).name_search(name, args, operator, limit)
