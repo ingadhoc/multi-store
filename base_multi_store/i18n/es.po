@@ -137,3 +137,13 @@ msgstr "Usuario"
 #: model:ir.model.fields,field_description:base_multi_store.field_res_store__user_ids
 msgid "Users"
 msgstr "Usuarios"
+
+#. module: base_multi_store
+#: model:ir.actions.act_window,help:base_multi_store.action_store
+msgid "No branches found!"
+msgstr "¡No se encontraron sucursales!"
+
+#. module: base_multi_store
+#: model:ir.actions.act_window,help:base_multi_store.action_store
+msgid "Create a new branch to get started."
+msgstr "Crea una nueva sucursal para empezar."
