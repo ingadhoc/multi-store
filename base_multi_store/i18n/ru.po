@@ -123,6 +123,14 @@ msgid "Stores"
 msgstr "Магазины"
 
 #. module: base_multi_store
+msgid "No branches found!"
+msgstr "Филиалов не найдено!"
+
+#. module: base_multi_store
+msgid "Create a new branch to get started."
+msgstr "Создайте новый филиал, чтобы начать."
+
+#. module: base_multi_store
 #: model:ir.model.constraint,message:base_multi_store.constraint_res_store_name_uniq
 msgid "The store name must be unique per company!"
 msgstr ""

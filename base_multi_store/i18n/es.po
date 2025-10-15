@@ -20,9 +20,44 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #. module: base_multi_store
+#: model:ir.model.fields,field_description:base_multi_store.field_res_store__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: base_multi_store
 #: model_terms:ir.ui.view,arch_db:base_multi_store.view_store_users_form
 msgid "Allowed Stores"
 msgstr "Sucursales Permitidas"
+
+#. module: base_multi_store
+#: model_terms:ir.ui.view,arch_db:base_multi_store.view_res_store_form
+msgid "Archived"
+msgstr "Archivado"
+
+#. module: base_multi_store
+#: model:ir.model.fields,field_description:base_multi_store.field_res_store__avatar_1920
+msgid "Avatar"
+msgstr "Avatar"
+
+#. module: base_multi_store
+#: model:ir.model.fields,field_description:base_multi_store.field_res_store__avatar_1024
+msgid "Avatar 1024"
+msgstr "Avatar"
+
+#. module: base_multi_store
+#: model:ir.model.fields,field_description:base_multi_store.field_res_store__avatar_128
+msgid "Avatar 128"
+msgstr "Avatar"
+
+#. module: base_multi_store
+#: model:ir.model.fields,field_description:base_multi_store.field_res_store__avatar_256
+msgid "Avatar 256"
+msgstr "Avatar"
+
+#. module: base_multi_store
+#: model:ir.model.fields,field_description:base_multi_store.field_res_store__avatar_512
+msgid "Avatar 512"
+msgstr "Avatar"
 
 #. module: base_multi_store
 #: model:ir.model.fields,field_description:base_multi_store.field_res_store__child_ids
@@ -31,6 +66,7 @@ msgstr "Sucursales hijas"
 
 #. module: base_multi_store
 #: model:ir.model.fields,field_description:base_multi_store.field_res_store__company_id
+#: model_terms:ir.ui.view,arch_db:base_multi_store.view_res_store_form
 msgid "Company"
 msgstr "Compañía"
 
@@ -51,17 +87,29 @@ msgstr "Sucursal Actual"
 
 #. module: base_multi_store
 #: model:ir.model.fields,field_description:base_multi_store.field_res_store__display_name
+#: model:ir.model.fields,field_description:base_multi_store.field_res_users__display_name
 msgid "Display Name"
 msgstr "Nombre mostrado"
 
 #. module: base_multi_store
 #. odoo-python
 #: code:addons/base_multi_store/models/res_store.py:0
-msgid "Error! You can not create recursive stores."
+msgid "¡Error! No puedes crear sucursales recursivas."
 msgstr ""
 
 #. module: base_multi_store
+#: model_terms:ir.ui.view,arch_db:base_multi_store.view_res_store_form
+msgid "General Information"
+msgstr "Información General"
+
+#. module: base_multi_store
+#: model_terms:ir.actions.act_window,help:base_multi_store.action_store
+msgid "Here you can create and manage all your branches."
+msgstr "Aquí podrás crear y gestionar todas tus sucursales."
+
+#. module: base_multi_store
 #: model:ir.model.fields,field_description:base_multi_store.field_res_store__id
+#: model:ir.model.fields,field_description:base_multi_store.field_res_users__id
 msgid "ID"
 msgstr ""
 
@@ -71,6 +119,31 @@ msgid "If specified, this store will be only available on selected company"
 msgstr ""
 "Si se especifica, esta sucursal sólo estará disponible en la empresa "
 "seleccionada"
+
+#. module: base_multi_store
+#: model:ir.model.fields,field_description:base_multi_store.field_res_store__image_1920
+msgid "Image"
+msgstr "Imágen"
+
+#. module: base_multi_store
+#: model:ir.model.fields,field_description:base_multi_store.field_res_store__image_1024
+msgid "Image 1024"
+msgstr "Imágen"
+
+#. module: base_multi_store
+#: model:ir.model.fields,field_description:base_multi_store.field_res_store__image_128
+msgid "Image 128"
+msgstr "Imágen"
+
+#. module: base_multi_store
+#: model:ir.model.fields,field_description:base_multi_store.field_res_store__image_256
+msgid "Image 256"
+msgstr "Imágen"
+
+#. module: base_multi_store
+#: model:ir.model.fields,field_description:base_multi_store.field_res_store__image_512
+msgid "Image 512"
+msgstr ""
 
 #. module: base_multi_store
 #: model:ir.model.fields,field_description:base_multi_store.field_res_store__write_uid
@@ -89,9 +162,13 @@ msgstr "Multi Sucursales"
 
 #. module: base_multi_store
 #: model:ir.model.fields,field_description:base_multi_store.field_res_store__name
-#: model_terms:ir.ui.view,arch_db:base_multi_store.view_res_store_form
 msgid "Name"
 msgstr "Nombre"
+
+#. module: base_multi_store
+#: model_terms:ir.ui.view,arch_db:base_multi_store.view_res_store_form
+msgid "Parent"
+msgstr "Sucursal Padre"
 
 #. module: base_multi_store
 #: model:ir.model.fields,field_description:base_multi_store.field_res_store__parent_id
@@ -108,6 +185,7 @@ msgstr "Sucursal"
 #: model:ir.model,name:base_multi_store.model_res_store
 #: model:ir.model.fields,field_description:base_multi_store.field_res_users__store_ids
 #: model:ir.ui.menu,name:base_multi_store.menu_action_res_store
+#: model_terms:ir.ui.view,arch_db:base_multi_store.view_res_store_form
 #: model_terms:ir.ui.view,arch_db:base_multi_store.view_res_store_tree
 msgid "Stores"
 msgstr "Sucursales"
@@ -115,8 +193,8 @@ msgstr "Sucursales"
 #. module: base_multi_store
 #. odoo-python
 #: code:addons/base_multi_store/models/res_users.py:0
-msgid "The selected store it's not allow for your user"
-msgstr ""
+msgid "The selected store is not allowed for your user"
+msgstr "La sucursal seleccionada no está permitida para su usuario"
 
 #. module: base_multi_store
 #: model:ir.model.constraint,message:base_multi_store.constraint_res_store_name_uniq
@@ -137,3 +215,13 @@ msgstr "Usuario"
 #: model:ir.model.fields,field_description:base_multi_store.field_res_store__user_ids
 msgid "Users"
 msgstr "Usuarios"
+
+#. module: base_multi_store
+#: model_terms:ir.actions.act_window,help:base_multi_store.action_store
+msgid "You don't have any branches yet."
+msgstr "Aún no tienes sucursales."
+
+#. module: base_multi_store
+#: model_terms:ir.ui.view,arch_db:base_multi_store.view_res_store_form
+msgid "e.g. Joe's Store"
+msgstr "Ej. Tienda Joe"
