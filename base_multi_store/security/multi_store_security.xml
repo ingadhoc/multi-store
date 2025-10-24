@@ -9,7 +9,7 @@
     <record id="res_store_rule" model="ir.rule">
         <field name="name">multi-store store rule</field>
         <field name="model_id" ref="model_res_store"/>
-        <field name="domain_force">[('id','in',user.store_ids.ids)]</field>
+        <field name="domain_force">['|',('id','=',False),('id','child_of',[user.store_id.id])]</field>
         <field name="groups" eval="[(4,ref('base.group_user')),(4,ref('base.group_portal')), (4,ref('base.group_public'))]"/>
     </record>
 
