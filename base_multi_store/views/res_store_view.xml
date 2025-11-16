@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<odoo>
+    <!-- Tree -->
+    <record id="view_res_store_tree" model="ir.ui.view">
+        <field name="name">res.store.list</field>
+        <field name="model">res.store</field>
+        <field name="arch" type="xml">
+            <list string="Stores">
+                <field name="name"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="parent_id"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form -->
+    <record id="view_res_store_form" model="ir.ui.view">
+        <field name="name">res.store.form</field>
+        <field name="model">res.store</field>
+        <field name="arch" type="xml">
+            <form string="Stores" duplicate="0">
+                <sheet>
+                    <field name="id" invisible="1"/>
+                    <field name="company_id" invisible="1"/>
+                    <div class="oe_button_box" name="button_box"> </div>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <div class="d-flex gap-2">
+                        <field name="image_1920" widget="contact_image" class="oe_avatar text-start float-none" nolabel="1" options="{'size': [100,100], 'img_class': 'rounded-4'}"/>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" placeholder="e.g. Joe's Store" default_focus="1" required="1"/>
+                            </h1>
+                            <h2><field name="company_id" class="w-100" placeholder="Company"/></h2>
+                        </div>
+                    </div>
+                    <notebook colspan="4">
+                        <page string="General Information" name="general_info">
+                            <group>
+                                <group>
+                                    <field name="parent_id" class="w-100" domain="[('id', '!=', id),'|', ('company_id', '=', False), ('company_id', '=', company_id)]"
+                                           context="{'default_company_id': company_id}" placeholder="Parent"/>
+                                </group>
+                                <group>
+
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_store" model="ir.actions.act_window">
+        <field name="name">Stores</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.store</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain"></field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            You don't have any branches yet.
+          </p><p>
+            Here you can create and manage all your branches.
+          </p>
+        </field>
+    </record>
+
+    <menuitem
+        action="action_store"
+        id="menu_action_res_store"
+        parent="base.menu_users"
+        sequence="20"
+    />
+</odoo>
