@@ -23,6 +23,6 @@ class StockRule(models.Model):
             args += [
                 "|",
                 ("warehouse_id.store_id", "=", False),
-                ("warehouse_id.store_id", "child_of", [user.store_id.id]),
+                ("warehouse_id.store_id", "child_of", user.store_ids.ids),
             ]
         return super()._search(args, offset, limit, order)

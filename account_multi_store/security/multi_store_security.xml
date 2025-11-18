@@ -4,7 +4,7 @@
         <field name="name">Journal multi-store</field>
         <field name="model_id" ref="account.model_account_journal"/>
         <field name="global" eval="True"/>
-        <field name="domain_force">['|',('store_id','=',False),('store_id','child_of',[user.store_id.id])]</field>
+        <field name="domain_force">['|',('store_id','=',False),('store_id','child_of',user.store_ids.ids)]</field>
         <field name="perm_read" eval="False"/>
     </record>
 
@@ -13,7 +13,7 @@
         <field name="model_id" ref="account.model_account_move"/>
         <field name="global" eval="True"/>
         <field name="perm_read" eval="False"/>
-        <field name="domain_force">['|',('journal_id.store_id','=',False),('journal_id.store_id','child_of',[user.store_id.id])]</field>
+        <field name="domain_force">['|',('journal_id.store_id','=',False),('journal_id.store_id','child_of',user.store_ids.ids)]</field>
     </record>
 
     <record id="account_payment_store_rule" model="ir.rule">
@@ -21,6 +21,6 @@
         <field name="model_id" ref="account.model_account_payment"/>
         <field name="global" eval="True"/>
         <field name="perm_read" eval="False"/>
-        <field name="domain_force">['|',('journal_id.store_id','=',False),('journal_id.store_id','child_of',[user.store_id.id])]</field>
+        <field name="domain_force">['|',('journal_id.store_id','=',False),('journal_id.store_id','child_of',user.store_ids.ids)]</field>
     </record>
 </odoo>

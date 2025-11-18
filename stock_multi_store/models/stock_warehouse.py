@@ -33,5 +33,5 @@ class StockWarehouse(models.Model):
         # if superadmin, do not apply
         # we use limit to control if the call is calling from a interface, and if not we need to not restring the domain
         if limit and not self.env.is_superuser():
-            args += ["|", ("store_id", "=", False), ("store_id", "child_of", [user.store_id.id])]
+            args += ["|", ("store_id", "=", False), ("store_id", "child_of", user.store_ids.ids)]
         return super()._search(args, offset, limit, order)

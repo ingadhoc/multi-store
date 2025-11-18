@@ -18,6 +18,6 @@ class StockWarehouseOrderpoint(models.Model):
             res["domain"] = res["domain"] + [
                 "|",
                 ("warehouse_id.store_id", "=", False),
-                ("warehouse_id.store_id", "child_of", [user.store_id.id]),
+                ("warehouse_id.store_id", "child_of", user.store_ids.ids),
             ]
         return res
