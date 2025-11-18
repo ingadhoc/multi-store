@@ -1,0 +1,15 @@
+<<<<<<< HEAD
+||||||| MERGE BASE
+=======
+<?xml version="1.0"?>
+<odoo noupdate="1">
+    <record id="purchase_order_store_rule" model="ir.rule">
+        <field name="name">Purchase Order multi-store</field>
+        <field name="model_id" ref="purchase.model_purchase_order"/>
+        <field name="global" eval="True"/>
+        <field name="perm_read" eval="False"/>
+        <field name="domain_force">['|',('picking_type_id.store_id','=',False),('picking_type_id.store_id','child_of',user.store_ids.ids)]</field>
+    </record>
+</odoo>
+
+>>>>>>> FORWARD PORTED
