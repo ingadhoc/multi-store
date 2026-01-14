@@ -41,7 +41,7 @@ class AccountMoveLine(models.Model):
                 % (self.mapped("journal_id.store_id.name"), currency_exchange_journal.mapped("name"))
             )
         elif currency_exchange_journal:
-            vals["move_vals"]["journal_id"] = currency_exchange_journal.id
+            vals["move_values"]["journal_id"] = currency_exchange_journal.id
 
         return vals
 
