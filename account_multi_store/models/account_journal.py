@@ -3,6 +3,7 @@
 # directory
 ##############################################################################
 from odoo import api, fields, models
+from odoo.tools import config
 
 
 class AccountJournal(models.Model):
@@ -27,8 +28,10 @@ class AccountJournal(models.Model):
         user = self.env.user
         # if superadmin, do not apply
         if not self.env.is_superuser():
-            domain += ["|", ("store_id", "=", False), ("store_id", "child_of", user.store_ids.ids)]
-        return super(AccountJournal, self.with_context(active_test=False))._search(domain, offset, limit, order)
+            domain = domain + ["|", ("store_id", "=", False), ("store_id", "child_of", user.store_ids.ids)]
+        if not config["test_enable"]:
+            self = self.with_context(active_test=False)
+        return super(AccountJournal, self)._search(domain, offset, limit, order)
 
     @api.model
     @api.readonly
