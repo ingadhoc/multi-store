@@ -27,11 +27,19 @@ class AccountJournal(models.Model):
         """
         user = self.env.user
         # if superadmin, do not apply
-        if not self.env.is_superuser():
+        if not self.env.is_superuser() and not self.env.context.get("skip_store_filter"):
             domain = domain + ["|", ("store_id", "=", False), ("store_id", "child_of", user.store_ids.ids)]
         if not config["test_enable"]:
             self = self.with_context(active_test=False)
         return super(AccountJournal, self)._search(domain, offset, limit, order)
+
+    def fetch(self, field_names):
+        # Since 17.0, fetch() resolves the ids through _search() as the current user, so the store
+        # filter above forbids reading journals of other stores (allowed up to 16.0). The filter
+        # is only meant to restrict choosing journals, not reading them by id.
+        # keep env.company, it is part of the cache key of company-dependent fields
+        records = self.with_company(self.env.company).with_context(skip_store_filter=True)
+        return super(AccountJournal, records).fetch(field_names)
 
     @api.model
     @api.readonly
