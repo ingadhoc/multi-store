@@ -36,6 +36,8 @@ class StockPickingType(models.Model):
         # Since 17.0, fetch() resolves the ids through _search() as the current user, so the store
         # filter above forbids reading records of other stores (allowed up to 16.0). The filter
         # is only meant to restrict choosing records, not reading them by id.
-        # keep env.company, it is part of the cache key of company-dependent fields
-        records = self.with_company(self.env.company).with_context(skip_store_filter=True)
+        # keep env.company (cache key of company-dependent fields) and env.companies (multi-company rules)
+        company = self.env.company
+        company_ids = [company.id] + [cid for cid in self.env.companies.ids if cid != company.id]
+        records = self.with_context(skip_store_filter=True, allowed_company_ids=company_ids)
         return super(StockPickingType, records).fetch(field_names)
